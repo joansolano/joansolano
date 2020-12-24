@@ -1,10 +1,11 @@
 import colors from 'vuetify/es5/util/colors'
+import getRoutes from './utils/getRoutes'
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - joansolano',
-    title: 'joansolano',
+    titleTemplate: '%s - Joan Solano',
+    title: 'Joan Solano',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -30,7 +31,16 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    '@nuxtjs/fontawesome'
   ],
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      solid: true,
+      brands: true
+    }
+  },
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
@@ -40,17 +50,40 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-coldark-dark.css'
+      }
+    }
+  },
+
+  //Sitemap module configuration
+  sitemap: {
+    path: "/sitemap.xml",
+    hostname: process.env.BASE_URL,
+    gzip: true,
+    routes() {
+      return getRoutes()
+    }
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: {
+      font: {
+        family: 'Open Sans'
+      }
+    },
     theme: {
       dark: true,
       themes: {
@@ -69,5 +102,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend (config, { isDev, isClient }) {
+      config.node = {
+        fs: 'empty',
+        net: 'empty'
+      }
+    }
   }
 }
