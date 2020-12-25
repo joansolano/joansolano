@@ -82,6 +82,11 @@ import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
 export default {
   layout: 'pages',
+  head() {
+    return {
+      title: 'Home'
+    }
+  },
   components: {
     Logo,
     VuetifyLogo

@@ -22,25 +22,31 @@
                     lg="4"
                     class="col-container"
                 >
-                    <v-card class="card-post">
-                        <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-                            <v-img
-                                :src="require(`~/assets/images/${article.img}`)"
-                            ></v-img>
-                            <v-card-title v-text="article.title"></v-card-title>
-                            <v-card-subtitle v-text="article.description"></v-card-subtitle>
-                            <v-card-actions>
-                                <v-btn
-                                    text
-                                    class="ml-1 mb-1 btn-more"
-                                    nuxt
-                                >   
-                                        Leer más 
-                                        <fa icon="arrow-right" class="ml-2 iconfa"/>
-                                </v-btn>
-                            </v-card-actions>
-                        </nuxt-link>
-                    </v-card>
+                    <v-hover v-slot="{ hover }">
+                        <v-card 
+                            class="card-post"
+                            :elevation="hover ? 12 : 0"
+                            :class="{ 'on-hover': hover }"
+                        >
+                            <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
+                                <v-img
+                                    :src="require(`~/assets/images/${article.img}`)"
+                                ></v-img>
+                                <v-card-title v-text="article.title"></v-card-title>
+                                <v-card-subtitle v-text="article.description"></v-card-subtitle>
+                                <v-card-actions>
+                                    <v-btn
+                                        text
+                                        class="ml-1 mb-1 btn-more"
+                                        nuxt
+                                    >   
+                                            Leer más 
+                                            <fa icon="arrow-right" class="ml-2 iconfa"/>
+                                    </v-btn>
+                                </v-card-actions>
+                            </nuxt-link>
+                        </v-card>
+                    </v-hover>
                 </v-col>
             </v-row>
             <v-divider v-if="allArticles.length > 6" class="mt-2 mb-2"></v-divider>
@@ -57,20 +63,7 @@
 
 <script>
 import getContent from '~/utils/getContent'
-/*
-if (process.client) {
-    const card = document.querySelectorAll('.card-post')
-    const container = document.querySelectorAll('.col-container')
-
-    console.log(window.innerHeight)
-
-    container.forEach((el, index) => el.addEventListener('mousemove', (e) => {
-        let xAxis = (window.innerWidth / 2 - e.pageX) / 30
-        let yAxis = (window.innerHeight / 2 - e.pageY) / 30
-        console.log(xAxis, yAxis)
-        card[index].style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`
-    }))
-}*/
+import getSiteMeta from '~/utils/getSiteMeta'
 
 export default {
     layout: 'pages',
@@ -81,6 +74,31 @@ export default {
             allArticles: content.allArticles,
             paginatedArticles: content.paginatedArticles,
         }
+    },
+    head() {
+        return {
+            title: `Página ${ this.$route.params.page } | Blog`,
+            meta: [
+                ...this.meta,
+            ],
+            link: [
+                {
+                    hid: "canonical",
+                    name: "canonical",
+                    href: `https://joansolano.herokuapp.com/blog/posts/${ this.$route.params.page }`
+                }
+            ]
+        }
+    },
+    computed: {
+        meta() {
+            const metaData = {
+                title: `Página ${ this.$route.params.page } | Blog`,
+                description: "Blog page about all the blog posts, articles, critics and others made by Joan Solano",
+                url: `https://joansolano.herokuapp.com/blog/posts/${ this.$route.params.page }`,
+            }
+            return getSiteMeta(metaData)
+        },
     }
 }
 </script>

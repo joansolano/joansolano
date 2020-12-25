@@ -40,6 +40,7 @@
 
 <script>
 import getProjects from '~/utils/getProjects'
+import getSiteMeta from '~/utils/getSiteMeta'
 
 export default {
   layout: 'pages',
@@ -47,6 +48,31 @@ export default {
     const projects = await getProjects($content, params)
 
     return projects
+  },
+  head() {
+    return {
+      title: 'Proyectos',
+      meta: [
+        ...this.meta,
+      ],
+      link: [
+        {
+          hid: "canonical",
+          name: "canonical",
+          href: "https://joansolano.herokuapp.com/projects"
+        }
+      ]
+    }
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        title: "Proyectos",
+        description: "Projects page about all the projects made by Joan Solano",
+        url: "https://joansolano.herokuapp.com/projects",
+      }
+      return getSiteMeta(metaData)
+    },
   }
 }
 </script>

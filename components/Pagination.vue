@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row justify="end" align="center">
-            <p class="text-body-2 mt-3 mr-3 color-text">Posts: {{ countPosts() }} de {{ totalArticles }}</p>
+            <p class="text-body-2 mt-3 mr-3 color-text">Blogs: {{ countPosts() }} de {{ totalArticles }}</p>
             <v-btn
                 icon
                 nuxt

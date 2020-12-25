@@ -24,23 +24,34 @@
 </template>
 
 <script>
+import getSiteMeta from '~/utils/getSiteMeta'
+
 export default {
     layout: 'pages',
-    async asyncData({ $content, params }) {
-        const articles = await $content('articles', params.slug)
-            .only(['title', 'description', 'img', 'slug'])
-            .sortBy('createdAt', 'desc')
-            .fetch()
-            .catch(err => {
-                console.log(err)
-            })
-
+    head() {
         return {
-            articles
+            title: 'Blog',
+            meta: [
+                ...this.meta,
+            ],
+            link: [
+                {
+                    hid: "canonical",
+                    name: "canonical",
+                    href: "https://joansolano.herokuapp.com/blog"
+                }
+            ]
         }
     },
-    mounted() {
-        console.log(this.articles)
+    computed: {
+        meta() {
+            const metaData = {
+                title: "Blog",
+                description: "Index page about all the blog posts, articles, critics and others made by Joan Solano",
+                url: "https://joansolano.herokuapp.com/blog",
+            }
+            return getSiteMeta(metaData)
+        },
     }
 }
 </script>

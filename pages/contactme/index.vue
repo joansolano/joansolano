@@ -124,7 +124,32 @@ export default {
     showSome() {
       alert('Mensaje enviado... Realmente no se envió nada pero pues bueno')
     }
-  }
+  },
+  head() {
+    return {
+      title: 'Contáctame',
+      meta: [
+        ...this.meta
+      ],
+      link: [
+        {
+          hid: "canonical",
+          name: "canonical",
+          href: "https://joansolano.herokuapp.com/contactme"
+        }
+      ]
+    }
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        title: "Contáctame",
+        description: "Index page to contact Joan Solano",
+        url: "https://joansolano.herokuapp.com/contactme",
+      }
+      return getSiteMeta(metaData)
+    }
+  },
 }
 </script>
 

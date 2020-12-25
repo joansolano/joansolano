@@ -54,6 +54,8 @@
 </template>
 
 <script>
+import getSiteMeta from '~/utils/getSiteMeta'
+
 export default {
   layout: 'pages',
   data() {
@@ -68,7 +70,7 @@ export default {
           icon: 'instagram'
         },
         {
-          url: 'https://twitter.com/21_jntian',
+          url: 'https://twitter.com/joansolano21',
           icon: 'twitter'
         },
         {
@@ -80,6 +82,31 @@ export default {
           icon: 'github'
         }
       ]
+    }
+  },
+  head() {
+    return {
+      title: 'Conóceme',
+      meta: [
+        ...this.meta
+      ],
+      link: [
+        {
+          hid: "canonical",
+          name: "canonical",
+          href: "https://joansolano.herokuapp.com/aboutme"
+        }
+      ]
+    }
+  },
+  computed: {
+    meta() {
+      const metaData = {
+        title: "Conóceme",
+        description: "Index page with info about Joan Solano",
+        url: "https://joansolano.herokuapp.com/aboutme",
+      }
+      return getSiteMeta(metaData)
     }
   },
   methods: {

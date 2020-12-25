@@ -1,18 +1,44 @@
 import colors from 'vuetify/es5/util/colors'
 import getRoutes from './utils/getRoutes'
+import getSiteMeta from './utils/getSiteMeta'
+
+const meta = getSiteMeta();
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - Joan Solano',
+    htmlAttrs: {
+      lang: "es"
+    },
+    titleTemplate: '%s | Joan Solano',
     title: 'Joan Solano',
     meta: [
+      ...meta,
       { charset: 'utf-8' },
+      { name: "HandheldFriendly", content: "True" },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { 
+        hid: 'description', 
+        name: 'description', 
+        content: 'Personal website about Joan Solano' 
+      },
+      {
+        hid: "og:site_name",
+        property: "og:site_name",
+        content: "Joan Solano"
+      },
+      { property: "og:image:width", content: "740" },
+      { property: "og:image:height", content: "300" },
+      { name: "twitter:site", content: "@joansolano21" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: process.env.BASE_URL
+      }
     ]
   },
 
@@ -26,6 +52,10 @@ export default {
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
+
+  pwa: {
+    source: '~/static/favicon.ico'
+  },
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
