@@ -5,7 +5,7 @@
             <v-col cols="12" align="center" justify="center">
                 <p class="text-h4 text-sm-h3 text-md-h2">Blog</p>
             </v-col>
-            <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;Qué pienso&nbsp;&boxh;&boxh;&boxh;</p>
+            <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Qué pienso</span>&nbsp;&boxh;&boxh;&boxh;</p>
             </v-row>
             <v-row align="center" justify="center" wrap>
                 <v-col cols="12" sm="8" md="6" align="center" justify="center">
@@ -20,11 +20,9 @@
                     sm="10"
                     md="6"
                     lg="4"
-                    class="col-container"
                 >
                     <v-hover v-slot="{ hover }">
                         <v-card 
-                            class="card-post"
                             :elevation="hover ? 12 : 0"
                             :class="{ 'on-hover': hover }"
                         >
@@ -32,16 +30,17 @@
                                 <v-img
                                     :src="require(`~/assets/images/${article.img}`)"
                                 ></v-img>
-                                <v-card-title v-text="article.title"></v-card-title>
+                                <v-card-title v-text="article.title" class="green--text"></v-card-title>
                                 <v-card-subtitle v-text="article.description"></v-card-subtitle>
                                 <v-card-actions>
                                     <v-btn
                                         text
-                                        class="ml-1 mb-1 btn-more"
+                                        class="ml-1 mb-1 green--text"
                                         nuxt
+                                        outlined
                                     >   
-                                            Leer más 
-                                            <fa icon="arrow-right" class="ml-2 iconfa"/>
+                                        Leer más 
+                                        <fa icon="arrow-right" class="ml-2 white--text"/>
                                     </v-btn>
                                 </v-card-actions>
                             </nuxt-link>
@@ -104,17 +103,7 @@ export default {
 </script>
 
 <style scoped>
-.card-post {
-    transform-style: preserve-3d;
-}
-
 a {
     text-decoration: none;
-}
-.btn-more {
-    color: #126d03;
-}
-.iconfa {
-    color: white;
 }
 </style>

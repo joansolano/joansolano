@@ -5,7 +5,7 @@
         <v-col cols="12" align="center" justify="center">
           <p class="text-h4 text-sm-h3 text-md-h2">Contáctame</p>
         </v-col>
-        <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;Qué quieres saber&nbsp;&boxh;&boxh;&boxh;</p>
+        <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Qué quieres saber</span>&nbsp;&boxh;&boxh;&boxh;</p>
       </v-row>
       <v-row>
         <v-col
@@ -38,7 +38,7 @@
             </v-col>
             <v-col>
               <p>Email</p>
-              <a href="mailto:jntian-21@hotmail.com">
+              <a href="mailto:jntian-21@hotmail.com" class="green--text">
                 jntian-21@hotmail.com
               </a>
             </v-col>
@@ -94,6 +94,8 @@
 </template>
 
 <script>
+import getSiteMeta from '~/utils/getSiteMeta'
+
 export default {
   layout: 'pages',
   data() {
@@ -156,6 +158,5 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
-  color: #126d03;
 }
 </style>

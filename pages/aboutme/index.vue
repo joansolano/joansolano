@@ -5,7 +5,7 @@
           <v-col cols="12" align="center" justify="center">
             <p class="text-h4 text-sm-h3 text-md-h2">Conóceme</p>
           </v-col>
-          <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;Quién soy&nbsp;&boxh;&boxh;&boxh;</p>
+          <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Quién soy</span>&nbsp;&boxh;&boxh;&boxh;</p>
         </v-row>
         <v-row class="mt-2" align="center">
           <v-col
@@ -18,7 +18,20 @@
             ></v-img>
           </v-col>
           <v-col>
-            <p class="text-h6 text-sm-h5 text-md-h4">Soy Joan y soy ingeniero mecatrónico en proceso y mucho más</p>
+            <client-only>
+              <vue-typed-js 
+                :strings="strings"
+                :loop="true"
+                :typeSpeed="100"
+                :backSpeed="60"
+              >
+                <p
+                  class="text-h6 text-sm-h5 text-md-h4"
+                >
+                  Soy Joan y soy <span class="typing green--text"></span>y mucho más
+                </p>
+              </vue-typed-js> 
+            </client-only>
             <p>Soy un joven optimista que siempre ha creído que nunca hay que parar de aprender. Esto me impulsó a estudiar ingeniería mecatrónica con el afán de comprender mucho mejor cómo funciona y cómo se construye el mundo actual y hacia que mundo nos llevará lo que hacemos ahora. <br> Aún no entiendo todo por completo y no soy el mejor en lo que hago, es cierto. Sin embargo, siempre pongo el corazón en todo lo que hago y con toda la disposición para ayudar a las personas que tienen necesidades. No lo he hecho mucho pero espero poder hacerlo.</p>
             <v-btn
               rounded
@@ -60,6 +73,11 @@ export default {
   layout: 'pages',
   data() {
     return {
+      strings: [
+        'ingeniero mecatrónico',
+        'blogger',
+        'entusiasta'
+      ],
       networks: [
         {
           url: 'https://www.facebook.com/joansebastian.solanogarcia',
@@ -117,6 +135,5 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 </style>

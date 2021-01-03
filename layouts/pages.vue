@@ -42,7 +42,14 @@
                 </v-col>
             </v-footer>
         </v-navigation-drawer>
-        <v-app-bar app height="60px" hide-on-scroll>
+        <v-app-bar 
+            app 
+            height="60px" 
+            hide-on-scroll 
+            color="transparent"
+            elevation="0"
+            flat
+        >
             <v-btn
                 dark
                 icon

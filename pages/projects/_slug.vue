@@ -34,7 +34,7 @@
           <nuxt-content :document="project"/>
           <p>Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
           <v-divider></v-divider>
-          <prev-next :prev="prev" :next="next" :name="'projects-slug'" class="mt-2"/>
+          <prev-next :prev="prev" :next="next" :name="'projects-slug'" class="mt-4 mb-2"/>
         </v-col>
       </v-row>
     </v-container>
