@@ -52,6 +52,9 @@ export default {
             }
             return getSiteMeta(metaData)
         },
+    },
+    middleware({ redirect }) {
+        return redirect("301", "/blog/posts/1")
     }
 }
 </script>
