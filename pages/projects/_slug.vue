@@ -17,11 +17,7 @@
 
     <v-container class="mt-5">
         <!--Tabla de contenidos-->
-      <ul v-if="null">
-          <li v-for="link of project.toc" :key="link.id">
-              <nuxt-link :to="`#${link.id}`">{{link.text}}</nuxt-link>
-          </li>
-      </ul>
+      
 
       <v-row justify="center">
         <v-col 
@@ -30,6 +26,42 @@
         >
           <p class="text-body-2 text-sm-body-1 text-md-subtitle-2">{{ formatDate(project.createdAt) }}</p>
           <p class="text-h6 text-md-h5 font-weight-bold">{{ project.description }}</p>
+          
+          <!--
+          <ul >
+            <li v-for="link of project.toc" :key="link.id">
+              <nuxt-link :to="`#${link.id}`">{{link.text}}</nuxt-link>
+            </li>
+          </ul>
+          -->
+
+          <v-card
+            max-width="300"
+            tile
+            class="mb-4"
+            flat
+          >
+            <v-list>
+              <p class="text-h6 ma-2 text-center">Contenido</p>
+              <v-list-item-group
+                v-model="selectedItem"
+                color="black"
+              >
+                <v-list-item
+                  v-for="link of project.toc"
+                  :key="link.id"
+                  class="mr-1 ml-1"
+                >
+                  <nuxt-link :to="`#${ link.id }`">
+                    <v-list-item-content>
+                        <v-list-item-title v-text="link.text" class="green--text"></v-list-item-title>
+                    </v-list-item-content>
+                  </nuxt-link>
+                </v-list-item>
+              </v-list-item-group>
+            </v-list>
+          </v-card>
+          
           <nuxt-content :document="project"/>
           <p>Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
           <v-divider></v-divider>
@@ -64,7 +96,8 @@ export default {
     return {
       project,
       prev,
-      next
+      next,
+      selectedItem: null,
     }
   },
   methods: {
@@ -127,5 +160,11 @@ export default {
     top: 50%;
     left: 40%;
     transform: translate(-50%, -50%);
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
 }
 </style>

@@ -12,6 +12,8 @@
         <v-col
             cols="12"
             sm="6"
+            justify="center"
+            align="center"
         >
             <v-row>
                 <v-col
@@ -137,7 +139,8 @@ export default {
             switch (this.$vuetify.breakpoint.name) {
                 case 'xs': return 300
                 case 'sm': return 450
-                case 'md': return 600
+                case 'md': return 500
+                case 'lg': return 650
             }
         }
     }
