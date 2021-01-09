@@ -3,8 +3,7 @@
         <v-parallax 
             :src="require(`~/assets/images/${article.img}`)" 
             :alt="article.alt" 
-            style="width:100%;"
-            height="600"
+            style="width:100%; height:90vh;"
             dark
         >
             <div>

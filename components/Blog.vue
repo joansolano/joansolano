@@ -3,10 +3,10 @@
         <v-col cols="12" align="center" justify="center" class="hidden-sm-and-up type-text">
             <client-only>
                 <vue-typed-js 
-                    :strings="text"
-                    :loop="false"
-                    :typeSpeed="100"
-                    :backSpeed="60"
+                    :strings="textXs"
+                    :loop="true"
+                    :typeSpeed="200"
+                    :backSpeed="200"
                 >
                     <h1><span class="typing"></span></h1>
                 </vue-typed-js>
@@ -29,8 +29,8 @@
                 <div class="hidden-xs-only text-typer mt-2">
                     <client-only>
                         <vue-typed-js 
-                            :strings="text"
-                            :loop="false"
+                            :strings="textSmAndUp"
+                            :loop="true"
                             :typeSpeed="100"
                             :backSpeed="60"
                         >
@@ -42,6 +42,7 @@
                         outlined
                         color="black"
                         class="mt-2"
+                        large
                     >
                         Velo tú mismo | Blog
                     </v-btn>
@@ -56,15 +57,23 @@ export default {
     name: 'Blog',
     data() {
         return {
-            text: ['Alguna vez escuché que escribir es la forma más fácil de influenciar a las personas. Además, es la mejor forma de plasmar lo que pienso.']
+            textSmAndUp: [
+                'Alguna vez escuché que escribir es la forma más fácil de influenciar a las personas. Además, es la mejor forma de plasmar lo que pienso.',
+                'Por otro lado, no necesito mucho para hacerlo. Tan solo algo donde escribir y mucha creatividad para saber como expresarme correctamente.'
+            ],
+            textXs: [
+                'Alguna vez escuché que escribir es la forma más fácil de influenciar a las personas.', 
+                'Además, es la mejor forma de plasmar lo que pienso. Por otro lado, no necesito mucho para hacerlo.', 
+                'Tan solo algo donde escribir y mucha creatividad para saber como expresarme correctamente.'
+            ],
         }
     },
     computed: {
         widthImg() {
             switch (this.$vuetify.breakpoint.name) {
-                case 'xs': return 400
-                case 'sm': return 700
-                case 'md': return 800
+                case 'xs': return 300
+                case 'sm': return 650
+                case 'md': return 750
             }
         }
     }

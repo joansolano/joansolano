@@ -30,12 +30,12 @@
                                 <v-img
                                     :src="require(`~/assets/images/${article.img}`)"
                                 ></v-img>
-                                <v-card-title v-text="article.title" class="green--text"></v-card-title>
-                                <v-card-subtitle v-text="article.description"></v-card-subtitle>
+                                <v-card-title v-text="article.title" class="green--text text-h5"></v-card-title>
+                                <v-card-subtitle v-text="article.description" class="text-subtitle-1"></v-card-subtitle>
                                 <v-card-actions>
                                     <v-btn
                                         text
-                                        class="ml-1 mb-1 green--text"
+                                        class="ml-1 mb-1 green--text font-weight-black text-subtitle-1"
                                         nuxt
                                         outlined
                                     >   

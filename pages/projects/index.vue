@@ -15,38 +15,34 @@
           sm="11"
         >
           <v-card>
-            <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">
-              <div class="d-flex flex-no-wrap justify-space-between">
-                <div>
-                  <v-card-title
-                    v-text="project.title"
-                    class="mt-2 mb-2 green--text"
-                  ></v-card-title>
-                  <v-card-subtitle
-                    v-text="project.description"
-                  ></v-card-subtitle>
-                  <v-card-actions>
-                    <v-btn
-                      text
-                      outlined
-                      large
-                      class="ml-2 green--text"
-                      nuxt
-                    >
-                      Leer más
-                      <fa icon="arrow-right" class="ml-2 white--text"/>
-                    </v-btn>
-                  </v-card-actions>
-                </div>
-                <v-avatar
-                  class="ma-3"
-                  height="256"
-                  width="384"
-                  tile
+            <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">    
+              <v-img 
+                :src="require(`~/assets/images/${ project.img }`)"
+                class="white--text align-end"
+                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)"
+                height="300px"
+              >
+                <v-card-title
+                  v-text="project.title"
+                  class="mt-2 mb-2  text-h5"
+                ></v-card-title>
+                <v-card-subtitle
+                  v-text="project.description"
+                  class="text-subtitle-1"
+                ></v-card-subtitle>
+              </v-img>
+              <v-card-actions>
+                <v-btn
+                  text
+                  outlined
+                  large
+                  class="ml-2 green--text font-weight-black text-subtitle-1"
+                  nuxt
                 >
-                  <v-img :src="require(`~/assets/images/${ project.img }`)"></v-img>
-                </v-avatar>
-              </div>
+                  Leer más
+                  <fa icon="arrow-right" class="ml-2 white--text"/>
+                </v-btn>
+              </v-card-actions>
             </nuxt-link>
           </v-card>
         </v-col>
@@ -126,18 +122,6 @@ export default {
 </script>
 
 <style scoped>
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-.right {
-    position: absolute;
-    top: 70%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-}
 a {
   text-decoration: none;
 }

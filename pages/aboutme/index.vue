@@ -80,7 +80,7 @@ export default {
       ],
       networks: [
         {
-          url: 'https://www.facebook.com/joansebastian.solanogarcia',
+          url: 'https://www.facebook.com/joansesolano',
           icon: 'facebook'
         },
         {
@@ -88,11 +88,11 @@ export default {
           icon: 'instagram'
         },
         {
-          url: 'https://twitter.com/joansolano21',
+          url: 'https://twitter.com/joansesolano',
           icon: 'twitter'
         },
         {
-          url: 'https://www.linkedin.com/in/joan-sebastian-s/',
+          url: 'https://www.linkedin.com/in/joansesolano/',
           icon: 'linkedin-in'
         },
         {

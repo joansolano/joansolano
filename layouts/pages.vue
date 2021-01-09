@@ -46,7 +46,6 @@
             app 
             height="60px" 
             hide-on-scroll 
-            color="transparent"
             elevation="0"
             flat
         >

@@ -3,14 +3,11 @@
     <v-row class="section" id="home">
       <Home/>
     </v-row>
-    <v-row class="section" id="aboutme">
+    <v-row class="section" id="blog">
       <Blog/>
     </v-row>
-    <v-row class="section" id="blog">
-      <div class="content">
-        <h1>Projects Section</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At exercitationem reiciendis perspiciatis esse architecto corporis.</p>
-      </div>
+    <v-row class="section" id="projects">
+      <Projects/>
     </v-row>
   </div>
 </template>
@@ -50,16 +47,11 @@ export default {
   background: url("../static/background_joansolano.png") no-repeat center center fixed;
   background: cover;
 }
-.section#aboutme {
-  background-color: gray;
-}
 .section#blog {
-  background-color: rgb(114, 61, 111);
+  background: url("../static/background_blog.png") no-repeat center center fixed;
+  background: cover;
 }
 .section#projects {
-  background-color: rgba(47, 99, 34, 0.692)(51, 255, 0, 0.692);
-}
-.section#contactme {
-  background-color: rgb(92, 28, 28);
+  background-color: rgb(47, 99, 34);
 }
 </style>
