@@ -16,9 +16,6 @@
     </v-parallax>
 
     <v-container class="mt-5">
-        <!--Tabla de contenidos-->
-      
-
       <v-row justify="center">
         <v-col 
           cols="11" 
@@ -26,14 +23,6 @@
         >
           <p class="text-body-2 text-sm-body-1 text-md-subtitle-2">{{ formatDate(project.createdAt) }}</p>
           <p class="text-h6 text-md-h5 font-weight-bold">{{ project.description }}</p>
-          
-          <!--
-          <ul >
-            <li v-for="link of project.toc" :key="link.id">
-              <nuxt-link :to="`#${link.id}`">{{link.text}}</nuxt-link>
-            </li>
-          </ul>
-          -->
 
           <v-card
             max-width="300"
@@ -163,8 +152,5 @@ export default {
 }
 a {
   text-decoration: none;
-}
-li {
-  list-style: none;
 }
 </style>

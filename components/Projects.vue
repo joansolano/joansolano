@@ -25,7 +25,12 @@
                     >
                         <div 
                             id="microd"
-                        ></div>
+                            @drop="onDrop($event)"
+                            @dragover.prevent
+                            @dragenter.prevent
+                        >
+                            <img src="" alt="">
+                        </div>
                     </v-img>
                 </v-col>
                 <v-col>
@@ -49,8 +54,9 @@
                                     <v-img
                                         :src="img.src"
                                         width="80"
-                                        :id="img.name"
-                                        draggable="true"
+                                        :id="img.id"
+                                        draggable
+                                        @dragstart="startDrag($event, img)"
                                     ></v-img>
                                 </v-card>
                             </v-slide-item>
@@ -69,71 +75,74 @@ export default {
         return {
             imgs: [
                 {
-                    name: 'cap1',
-                    src: require(`~/assets/svg/elect_comp/Cap1.svg`)
+                    id: 'cap1',
+                    src: require(`~/assets/svg/elect_comp/cap1.svg`)
                 },
                 {
-                    name: 'cap2',
-                    src: require(`~/assets/svg/elect_comp/Cap2.svg`)
+                    id: 'cap2',
+                    src: require(`~/assets/svg/elect_comp/cap2.svg`)
                 },
                 {
-                    name: 'cap5',
-                    src: require(`~/assets/svg/elect_comp/Cap5.svg`)
+                    id: 'cap5',
+                    src: require(`~/assets/svg/elect_comp/cap5.svg`)
                 },
                 {
-                    name: 'ic1',
-                    src: require(`~/assets/svg/elect_comp/IC1.svg`)
+                    id: 'ic1',
+                    src: require(`~/assets/svg/elect_comp/ic1.svg`)
                 },
                 {
-                    name: 'ic2',
-                    src: require(`~/assets/svg/elect_comp/IC2.svg`)
+                    id: 'ic2',
+                    src: require(`~/assets/svg/elect_comp/ic2.svg`)
                 },
                 {
-                    name: 'micro',
-                    src: require(`~/assets/svg/elect_comp/Micro.svg`)
+                    id: 'micro',
+                    src: require(`~/assets/svg/elect_comp/micro.svg`)
                 },
                 {
-                    name: 'plugin1',
-                    src: require(`~/assets/svg/elect_comp/PlugIn1.svg`)
+                    id: 'plugin1',
+                    src: require(`~/assets/svg/elect_comp/plugin1.svg`)
                 },
                 {
-                    name: 'pot',
-                    src: require(`~/assets/svg/elect_comp/Potentiometer.svg`)
+                    id: 'pot',
+                    src: require(`~/assets/svg/elect_comp/pot.svg`)
                 },
                 {
-                    name: 'res1',
-                    src: require(`~/assets/svg/elect_comp/Res1.svg`)
+                    id: 'res1',
+                    src: require(`~/assets/svg/elect_comp/res1.svg`)
                 },
                 {
-                    name: 'res2',
-                    src: require(`~/assets/svg/elect_comp/Res2.svg`)
+                    id: 'res2',
+                    src: require(`~/assets/svg/elect_comp/res2.svg`)
                 },
                 {
-                    name: 'timer',
-                    src: require(`~/assets/svg/elect_comp/Timer.svg`)
+                    id: 'timer',
+                    src: require(`~/assets/svg/elect_comp/timer.svg`)
                 },
                 {
-                    name: 'vr',
-                    src: require(`~/assets/svg/elect_comp/VR.svg`)
+                    id: 'vr',
+                    src: require(`~/assets/svg/elect_comp/vr.svg`)
                 }
             ]
         }
     },
-    /*
     methods: {
-        allowDrop(ev) {
-            ev.preventDefault();
+        startDrag(evt, item) {
+            evt.dataTransfer.dropEffect = 'move'
+            evt.dataTransfer.effectAllowed = 'move'
+            evt.dataTransfer.setData('itemId', item.id)
+            console.log('Start Drag')
         },
-        drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id)
-        },
-        drop(ev) {
-            ev.preventDefault()
-            const data = ev.dataTransfer.getData("text")
-            ev.target.appendChild(document.getElementById(data))
+        onDrop(evt) {
+            const itemId = evt.dataTransfer.getData('itemId')
+            if (itemId === evt.path[0].id.slice(0, -1)) {
+                const div = document.querySelector(`#${ evt.path[0].id }`)
+                div.children[0].src = require(`~/assets/svg/elect_comp/${itemId}.svg`)
+                console.log(div.children)
+            }
+            else console.log('False')
+            //console.log(evt.path[0].id.slice(0, -1), itemId)
         }
     },
-    */
     computed: {
         widthImg() {
             switch (this.$vuetify.breakpoint.name) {

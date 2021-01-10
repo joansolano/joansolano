@@ -18,8 +18,8 @@
             <v-col cols="2" class="text-center">
               <fa icon="user-circle" size="3x"/>
             </v-col>
-            <v-col>
-              <p>Nombre</p>
+            <v-col class="mt-2">
+              <p class="text-h6 font-weight-bold ma-0">Nombre</p>
               <p>Joan Solano</p>
             </v-col>
           </v-row>
@@ -27,8 +27,8 @@
             <v-col cols="2" class="text-center">
               <fa icon="map-marker-alt" size="3x"/>
             </v-col>
-            <v-col>
-              <p>Dirección</p>
+            <v-col class="mt-2">
+              <p class="text-h6 font-weight-bold ma-0">Dirección</p>
               <p>Timaná, Huila</p>
             </v-col>
           </v-row>
@@ -37,7 +37,7 @@
               <fa icon="envelope" size="3x"/>
             </v-col>
             <v-col>
-              <p>Email</p>
+              <p class="text-h6 font-weight-bold ma-0">Email</p>
               <a href="mailto:jntian-21@hotmail.com" class="green--text">
                 jntian-21@hotmail.com
               </a>

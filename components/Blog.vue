@@ -23,10 +23,12 @@
         <v-col cols="12" align="center" justify="center">
             <v-img
                 :src="require('~/assets/svg/Typewriter.svg')"
-                :max-width="widthImg"
+                :max-width="width"
                 class="typewritter"
             >
-                <div class="hidden-xs-only text-typer mt-2">
+                <div 
+                    class="hidden-xs-only text-typer mt-2"
+                >
                     <client-only>
                         <vue-typed-js 
                             :strings="textSmAndUp"
@@ -65,15 +67,15 @@ export default {
                 'Alguna vez escuché que escribir es la forma más fácil de influenciar a las personas.', 
                 'Además, es la mejor forma de plasmar lo que pienso. Por otro lado, no necesito mucho para hacerlo.', 
                 'Tan solo algo donde escribir y mucha creatividad para saber como expresarme correctamente.'
-            ],
+            ]
         }
     },
     computed: {
-        widthImg() {
+        width() {
             switch (this.$vuetify.breakpoint.name) {
                 case 'xs': return 300
-                case 'sm': return 650
-                case 'md': return 750
+                case 'sm': return 750
+                case 'lg': return 950
             }
         }
     }
