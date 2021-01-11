@@ -52,6 +52,7 @@ export default {
   background: cover;
 }
 .section#projects {
-  background-color: rgb(47, 99, 34);
+  background: url("../static/background_projects.png") no-repeat center center fixed;
+  background: cover;
 }
 </style>
