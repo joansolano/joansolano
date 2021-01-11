@@ -48,11 +48,11 @@ export default {
   background: cover;
 }
 .section#blog {
-  background: url("../static/background_blog.png") no-repeat center center fixed;
+  background: url("../static/background_blog.jpg") no-repeat center center fixed;
   background: cover;
 }
 .section#projects {
-  background: url("../static/background_projects.png") no-repeat center center fixed;
+  background: url("../static/background_projects.jpg") no-repeat center center fixed;
   background: cover;
 }
 </style>

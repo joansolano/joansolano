@@ -36,7 +36,7 @@
                     cols="12"
                 >
                     <v-img
-                        :src="require('~/assets/svg/circuit1.svg')"
+                        :src="require('~/assets/svg/circuit1.png')"
                         :max-width="widthImg"
                     ></v-img>
                 </v-col>
@@ -253,7 +253,7 @@ export default {
         widthImg() {
             switch (this.$vuetify.breakpoint.name) {
                 case 'xs': 
-                    return 300
+                    return 350
                 case 'sm':
                     return 450
                 case 'md':
