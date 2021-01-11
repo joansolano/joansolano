@@ -121,101 +121,101 @@ export default {
             imgs: [
                 {
                     id: 'cap1',
-                    src: require('../assets/svg/elect_comp/cap1.svg')
+                    src: require('../assets/svg/cap1.svg')
                 },
                 {
                     id: 'cap2',
-                    src: require('../assets/svg/elect_comp/cap2.svg')
+                    src: require('../assets/svg/cap2.svg')
                 },
                 {
                     id: 'cap5',
-                    src: require('../assets/svg/elect_comp/cap5.svg')
+                    src: require('../assets/svg/cap5.svg')
                 },
                 {
                     id: 'ic1',
-                    src: require('../assets/svg/elect_comp/ic1.svg')
+                    src: require('../assets/svg/ic1.svg')
                 },
                 {
                     id: 'ic2',
-                    src: require('../assets/svg/elect_comp/ic2.svg')
+                    src: require('../assets/svg/ic2.svg')
                 },
                 {
                     id: 'micro',
-                    src: require('../assets/svg/elect_comp/micro.svg')
+                    src: require('../assets/svg/micro.svg')
                 },
                 {
                     id: 'plugin1',
-                    src: require('../assets/svg/elect_comp/plugin1.svg')
+                    src: require('../assets/svg/plugin1.svg')
                 },
                 {
                     id: 'pot',
-                    src: require('../assets/svg/elect_comp/pot.svg')
+                    src: require('../assets/svg/pot.svg')
                 },
                 {
                     id: 'res1',
-                    src: require('../assets/svg/elect_comp/res1.svg')
+                    src: require('../assets/svg/res1.svg')
                 },
                 {
                     id: 'res2',
-                    src: require('../assets/svg/elect_comp/res2.svg')
+                    src: require('../assets/svg/res2.svg')
                 },
                 {
                     id: 'timer',
-                    src: require('../assets/svg/elect_comp/timer.svg')
+                    src: require('../assets/svg/timer.svg')
                 },
                 {
                     id: 'vr',
-                    src: require('../assets/svg/elect_comp/vr.svg')
+                    src: require('../assets/svg/vr.svg')
                 }
             ],
             cpImgs: [
                 {
                     id: 'cap1',
-                    src: require('../assets/svg/elect_comp/cap1.svg')
+                    src: require('../assets/svg/cap1.svg')
                 },
                 {
                     id: 'cap2',
-                    src: require('../assets/svg/elect_comp/cap2.svg')
+                    src: require('../assets/svg/cap2.svg')
                 },
                 {
                     id: 'cap5',
-                    src: require('../assets/svg/elect_comp/cap5.svg')
+                    src: require('../assets/svg/cap5.svg')
                 },
                 {
                     id: 'ic1',
-                    src: require('../assets/svg/elect_comp/ic1.svg')
+                    src: require('../assets/svg/ic1.svg')
                 },
                 {
                     id: 'ic2',
-                    src: require('../assets/svg/elect_comp/ic2.svg')
+                    src: require('../assets/svg/ic2.svg')
                 },
                 {
                     id: 'micro',
-                    src: require('../assets/svg/elect_comp/micro.svg')
+                    src: require('../assets/svg/micro.svg')
                 },
                 {
                     id: 'plugin1',
-                    src: require('../assets/svg/elect_comp/plugin1.svg')
+                    src: require('../assets/svg/plugin1.svg')
                 },
                 {
                     id: 'pot',
-                    src: require('../assets/svg/elect_comp/pot.svg')
+                    src: require('../assets/svg/pot.svg')
                 },
                 {
                     id: 'res1',
-                    src: require('../assets/svg/elect_comp/res1.svg')
+                    src: require('../assets/svg/res1.svg')
                 },
                 {
                     id: 'res2',
-                    src: require('../assets/svg/elect_comp/res2.svg')
+                    src: require('../assets/svg/res2.svg')
                 },
                 {
                     id: 'timer',
-                    src: require('../assets/svg/elect_comp/timer.svg')
+                    src: require('../assets/svg/timer.svg')
                 },
                 {
                     id: 'vr',
-                    src: require('../assets/svg/elect_comp/vr.svg')
+                    src: require('../assets/svg/vr.svg')
                 }
             ],
             isHydrated: false,
@@ -232,7 +232,7 @@ export default {
             const itemId = evt.dataTransfer.getData('itemId')
             const div = document.querySelector(`#${ evt.path[0].id }`)
             if (itemId === evt.path[0].id.slice(0, -1)) {
-                div.children[0].src = require(`../assets/svg/elect_comp/${itemId}.svg`)
+                div.children[0].src = require(`../assets/svg/${itemId}.svg`)
                 this.imgs = this.imgs.filter(img => img.id != itemId)
             }
             if (this.imgs.length === 0) this.successGame = true;
