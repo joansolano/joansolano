@@ -13,9 +13,7 @@
 </template>
 
 <script>
-import Blog from '../components/Blog.vue'
 export default {
-  components: { Blog },
   layout: 'home',
   head() {
     return {

@@ -49,7 +49,7 @@
                     cols="12"
                 >
                     <v-img
-                        :src="require('~/assets/svg/empty_circuit.svg')"
+                        :src="require('~/assets/svg/empty_circuit.png')"
                         :max-width="widthImg"
                         id="ecImg"
                     >
@@ -240,8 +240,7 @@ export default {
         restartDnD(arrImgs) {
             if (this.successGame) {
                 arrImgs.forEach(el => {
-                    const div = document.querySelector(`#${ el.id }d`)
-                    div.children[0].src = ''
+                    document.querySelector(`#${ el.id }d`).children[0].src = ''
                 });
                 this.imgs = this.cpImgs
                 this.successGame = false

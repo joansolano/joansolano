@@ -7,7 +7,7 @@
         align="center"
     >
         <v-img 
-            :src="require('~/assets/svg/circuit_iso.svg')"
+            :src="require('~/assets/svg/circuit_iso.png')"
             :max-width="widthImg"
         ></v-img>
     </v-col>
