@@ -1,10 +1,9 @@
 <template>
-    <v-row align="center" justify="center">
+    <v-row align="center">
         <v-col
             cols="12" 
-            sm="6" 
-            justify="center" 
-            align="center"
+            sm="6"
+            class="pl-8 pt-10"
         >
             <p class="text-h6 text-md-h5 font-weight-bold">Del conocimiento a la práctica</p>
             <p class="text-subtitle-2 text-md-subtitle-1">Cuesta que cualquier tipo de conocimiento se quede grabado en lo más profundo de la mente si ese conocimiento no se lleva a la práctica</p>
@@ -19,8 +18,7 @@
             </v-btn>
             <v-divider v-if="!mobileAndTablet"></v-divider>
             <div class="mt-4" v-if="!mobileAndTablet">
-                <p class="text-subtitle-2 font-weight-bold">Nota:</p>
-                <p class="text-subtitle-2 font-italic">A la derecha hay un pequeño juego de arrastrar y soltar</p>
+                <p class="text-subtitle-2"><span class="font-weight-bold">Nota:</span> <span class="font-italic">A la derecha hay un pequeño juego de arrastrar y soltar</span></p>
                 <p class="text-subtitle-1 font-weight-bold">Intentalo <fa icon="arrow-right" class="ml-2"/></p>
             </div>
         </v-col>
