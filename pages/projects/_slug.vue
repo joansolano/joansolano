@@ -1,20 +1,18 @@
 <template>
   <div>
-    <v-parallax 
-      :src="require(`~/assets/images/${project.img}`)" 
-      :alt="project.alt" 
-      style="width:100%; height:90vh;"
-      dark
+    <div
+      id="parallaxEf"
+      :style="styleObject"
     >
-      <div>
+      <div class="shadow">
         <v-row class="centered" wrap>
           <v-col cols="12">
-            <p class="text-h4 text-sm-h3 text-md-h2 font-weight-black">{{project.title}}</p>
+            <p class="text-h4 text-sm-h3 text-md-h2 font-weight-bold">{{project.title}}</p>
           </v-col>
         </v-row>
       </div>
-    </v-parallax>
-
+    </div>
+    
     <v-container class="mt-5">
       <v-row justify="center">
         <v-col 
@@ -23,6 +21,20 @@
         >
           <p class="text-body-2 text-sm-body-1 text-md-subtitle-2">{{ formatDate(project.createdAt) }}</p>
           <p class="text-h6 text-md-h5 font-weight-bold">{{ project.description }}</p>
+          <p 
+            class="text-subtitle-2 text-md-subtitle-1 text-lg-h6" 
+            v-if="project.github"
+          >
+            Repo Github: 
+            <a 
+              :href="project.github" 
+              target="_blank" 
+              ref="noreferrer noopener" 
+              class="green--text"
+            >
+              {{ project.github }}
+            </a>
+          </p>
 
           <v-card
             max-width="300"
@@ -52,7 +64,8 @@
           </v-card>
           
           <nuxt-content :document="project"/>
-          <p>Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
+
+          <p class="mt-3">Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
           <v-divider></v-divider>
           <prev-next :prev="prev" :next="next" :name="'projects-slug'" class="mt-4 mb-2"/>
         </v-col>
@@ -87,6 +100,15 @@ export default {
       prev,
       next,
       selectedItem: null,
+      styleObject: {
+        height: '90vh',
+        widht: '100%',
+        backgroundImage: 'url(' + require(`~/assets/images/${project.img}`) +')',
+        backgroundAttachment: 'fixed',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover'
+      }
     }
   },
   methods: {
@@ -144,6 +166,9 @@ export default {
 </script>
 
 <style scoped>
+#parallaxEf {
+    position: relative;
+}
 .centered {
     position: absolute;
     top: 50%;
@@ -152,5 +177,9 @@ export default {
 }
 a {
   text-decoration: none;
+}
+.shadow {
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
 </style>

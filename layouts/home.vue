@@ -1,6 +1,6 @@
 <template>
     <v-app>
-        <NavDrawer :sidebar="sidebar" :links="links"/>
+        <NavDrawer :links="links" v-model="sidebar"/>
         <v-app-bar 
             app 
             height="0px"

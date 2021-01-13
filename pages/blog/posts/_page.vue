@@ -49,9 +49,8 @@
                 </v-col>
             </v-row>
             <v-divider v-if="allArticles.length > 6" class="mt-2 mb-2"></v-divider>
-            <pagination 
+            <Pagination 
                 v-if="allArticles.length > 6" 
-                :length="Math.ceil(allArticles.length / 6)"
                 :numberPage="parseInt(this.$route.params.page)"
                 :totalArticles="allArticles.length"
                 class="mr-4 mt-3"
@@ -98,6 +97,9 @@ export default {
             }
             return getSiteMeta(metaData)
         },
+    },
+    mounted() {
+        console.log(11 %  6)
     }
 }
 </script>

@@ -12,10 +12,12 @@ export default async ($content, params, error) => {
         if (currentPage === 1) {
             return 0;
         }
-        if (currentPage === lastPage) {
+        else if (currentPage === lastPage && lastPageCount != 0) {
             return totalArticles - lastPageCount;
         }
-        return (currentPage - 1) * perPage;
+        else {
+            return (currentPage - 1) * perPage;
+        }
     };
 
     const paginatedArticles = await $content('articles')

@@ -7,8 +7,8 @@
                 </v-avatar>
             </v-col>
             <v-col>
-                <p class="text-body-1 text-sm-subtitle-2 text-md-subtitle-1 mb-1">ESCRITO POR</p>
-                <p class="text-subtitle-2 text-sm-subtitle-1 text-md-h6">{{ author.name }}</p>
+                <p class="text-body-1 text-sm-subtitle-2 mb-1">ESCRITO POR</p>
+                <p class="text-subtitle-2 text-sm-subtitle-1 font-weight-bold">{{ author.name }}</p>
             </v-col>
         </v-row>
     </div>

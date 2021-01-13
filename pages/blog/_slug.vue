@@ -1,12 +1,10 @@
 <template>
     <div>
-        <v-parallax 
-            :src="require(`~/assets/images/${article.img}`)" 
-            :alt="article.alt" 
-            style="width:100%; height:90vh;"
-            dark
+        <div 
+            id="parallaxEf"
+            :style="styleObject"
         >
-            <div>
+            <div class="shadow">
                 <v-row class="centered" wrap>
                     <v-col cols="12">
                         <p class="text-h4 text-sm-h3 text-md-h2 font-weight-black">{{article.title}}</p>
@@ -15,16 +13,9 @@
                 </v-row>
             </div>
             <h6 class="bottom-right">Foto por: {{ article.imgauthor }}</h6>
-        </v-parallax>
-
+        </div>
+        
         <v-container class="mt-5">
-            <!--Tabla de contenidos-->
-            <ul v-if="null">
-                <li v-for="link of article.toc" :key="link.id">
-                    <nuxt-link :to="`#${link.id}`">{{link.text}}</nuxt-link>
-                </li>
-            </ul>
-
             <v-row justify="center">
                 <v-col 
                     cols="11" 
@@ -85,7 +76,16 @@ export default {
         return {
             article,
             prev,
-            next
+            next,
+            styleObject: {
+                height: '90vh',
+                widht: '100%',
+                backgroundImage: 'url(' + require(`~/assets/images/${article.img}`) +')',
+                backgroundAttachment: 'fixed',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: 'cover'
+            }
         }
     },
     methods: {
@@ -167,6 +167,9 @@ export default {
 </script>
 
 <style scoped >
+#parallaxEf {
+    position: relative;
+}
 .centered {
     position: absolute;
     top: 50%;
@@ -177,5 +180,9 @@ export default {
     position: absolute;
     bottom: 8px;
     right: 16px;
+}
+.shadow {
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 }
 </style>

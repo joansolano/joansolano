@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-row justify="end" align="center">
-            <p class="text-body-2 mt-3 mr-3 color-text">Blogs: {{ countPosts() }} de {{ totalArticles }}</p>
+            <p class="text-body-2 mt-3 mr-3 green--text">Blogs: {{ countPosts() }} de {{ totalArticles }}</p>
             <v-btn
                 icon
                 nuxt
@@ -40,11 +40,12 @@
 
 <script>
 export default {
+    data() {
+        return {
+            length: Math.ceil(this.totalArticles / 6)
+        }
+    },
     props: {
-        length: {
-            type: Number,
-            default: 0,
-        },
         numberPage: {
             type: Number,
             default: 0,
@@ -70,9 +71,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.color-text {
-    color: #126d03;
-}
-</style>

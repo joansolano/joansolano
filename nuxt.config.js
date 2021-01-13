@@ -7,7 +7,7 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     htmlAttrs: {
-      lang: "es"
+      lang: 'es'
     },
     titleTemplate: '%s | Joan Solano',
     title: 'Joan Solano',
@@ -100,8 +100,6 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/sitemap'

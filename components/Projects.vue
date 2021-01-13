@@ -6,13 +6,12 @@
             justify="center" 
             align="center"
         >
-            <p class="text-h5 text-md-h4 font-weight-bold">Del conocimiento a la práctica</p>
+            <p class="text-h6 text-md-h5 font-weight-bold">Del conocimiento a la práctica</p>
             <p class="text-subtitle-2 text-md-subtitle-1">Cuesta que cualquier tipo de conocimiento se quede grabado en lo más profundo de la mente si ese conocimiento no se lleva a la práctica</p>
             <p class="text-subtitle-2 text-md-subtitle-1">Los proyectos permiten hacer esto y es mediante estos, que se puede cambiar el mundo y a las personas que viven en el</p>
             <p class="text-subtitle-2 text-md-subtitle-1">Por eso quiero mostrar los distintos proyectos que hecho</p>
             <v-btn
                 :to="{ name: 'projects' }"
-                large
                 outlined
                 class="mb-4"
             >
@@ -43,7 +42,7 @@
             </v-row>
             <v-row v-else>
                 <v-col>
-                    <h1>Arrastra y suelta</h1>
+                    <h2>Arrastra y suelta</h2>
                 </v-col>
                 <v-col
                     cols="12"
@@ -80,7 +79,7 @@
                                 :key="index"
                             >
                                 <v-card
-                                    height="100"
+                                    height="90"
                                     width="100"
                                     class="ma-2 pa-2"
                                 >
