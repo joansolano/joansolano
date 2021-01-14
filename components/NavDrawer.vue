@@ -1,23 +1,24 @@
 <template>
     <div id="Navdrawer">
         <v-navigation-drawer
-            :value="value"
+            :value="screen2k ? true : value"
             @input="$emit('input', $event)"
             app
             right
-            temporary
+            :temporary="screen2k ? false : true"
+            clipped
+            :width="widthLogo.drawer"
         >
             <v-list class="ml-2 mr-2">
-                <v-list-item class="ml-10 mb-2">
+                <v-list-item class="mb-2">
                     <v-list-item-content>
-                        <v-list-item-title v-text="'Joan Solano'" class="text-h5 font-weight-black"></v-list-item-title>
+                        <v-list-item-title v-text="'Joan Solano'" class="text-h5 text-xl-h2 text-center font-weight-black"></v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item class="mb-2">
+                <v-list-item class="mb-4 d-flex justify-center">
                     <v-img
                         :src="require('~/static/logo_joansolano.svg')"
-                        max-width="150"
-                        class="ml-8"
+                        :max-width="widthLogo.img"
                     ></v-img>
                 </v-list-item>
                 <v-list-item
@@ -26,12 +27,13 @@
                     :to="{ name: link.url}"
                     router
                     exact
+                    :class="screen2k ? 'pa-6' : ''"
                 >
                     <v-list-item-action>
-                        <fa :icon="link.icon" />
+                        <fa :icon="link.icon" :size="screen2k ? '2x' : '1x'"/>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title v-text="link.name"></v-list-item-title>
+                        <v-list-item-title v-text="link.name" class="text-xl-h4"></v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
@@ -52,7 +54,7 @@ export default {
     name: 'NavDrawer',
     data() {
         return {
-            navdraw: this.sidebar
+            clipped: this.$vuetify.breakpoint.name === 'xl'
         }
     },
     props: {
@@ -63,6 +65,23 @@ export default {
         links: {
             type: Array,
             default: []
+        }
+    },
+    computed: {
+        widthLogo() {
+            switch (this.$vuetify.breakpoint.name) {
+                case 'xl': return {
+                    img: 250,
+                    drawer: 500
+                }
+                default: return {
+                    img: 150,
+                    drawer: 256
+                }
+            }
+        },
+        screen2k() {
+            return this.$vuetify.breakpoint.name === 'xl'
         }
     }
 }

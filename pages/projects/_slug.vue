@@ -7,7 +7,7 @@
       <div class="shadow">
         <v-row class="centered" wrap>
           <v-col cols="12">
-            <p class="text-h4 text-sm-h3 text-md-h2 font-weight-bold">{{project.title}}</p>
+            <p class="text-h4 text-sm-h3 text-md-h2 text-xl-h1 font-weight-bold">{{project.title}}</p>
           </v-col>
         </v-row>
       </div>
@@ -19,10 +19,10 @@
           cols="11" 
           sm="10"
         >
-          <p class="text-body-2 text-sm-body-1 text-md-subtitle-2">{{ formatDate(project.createdAt) }}</p>
-          <p class="text-h6 text-md-h5 font-weight-bold">{{ project.description }}</p>
+          <p class="text-body-2 text-sm-body-1 text-md-subtitle-2 text-xl-subtitle-1">{{ formatDate(project.createdAt) }}</p>
+          <p class="text-h6 text-md-h5 text-xl-h4 font-weight-bold">{{ project.description }}</p>
           <p 
-            class="text-subtitle-2 text-md-subtitle-1 text-lg-h6" 
+            class="text-subtitle-2 text-md-subtitle-1 text-lg-h6 text-xl-h5" 
             v-if="project.github"
           >
             Repo Github: 
@@ -43,7 +43,7 @@
             flat
           >
             <v-list>
-              <p class="text-h6 ma-2 text-center">Contenido</p>
+              <p class="text-h6 text-xl-h5 ma-2 text-center">Contenido</p>
               <v-list-item-group
                 v-model="selectedItem"
                 color="black"
@@ -55,7 +55,7 @@
                 >
                   <nuxt-link :to="`#${ link.id }`">
                     <v-list-item-content>
-                        <v-list-item-title v-text="link.text" class="green--text"></v-list-item-title>
+                        <v-list-item-title v-text="link.text" class="green--text text-xl-h5"></v-list-item-title>
                     </v-list-item-content>
                   </nuxt-link>
                 </v-list-item>
@@ -63,11 +63,11 @@
             </v-list>
           </v-card>
           
-          <nuxt-content :document="project"/>
+          <nuxt-content :document="project" class="text-xl-h5"/>
 
-          <p class="mt-3">Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
+          <p class="mt-3 text-body-2 text-sm-body-1 text-md-subtitle-2 text-xl-subtitle-1">Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
           <v-divider></v-divider>
-          <prev-next :prev="prev" :next="next" :name="'projects-slug'" class="mt-4 mb-2"/>
+          <prev-next :prev="prev" :next="next" :name="'projects-slug'" class="mt-4 mb-2 text-xl-h6"/>
         </v-col>
       </v-row>
     </v-container>

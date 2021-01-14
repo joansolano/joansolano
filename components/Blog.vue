@@ -36,15 +36,16 @@
                             :typeSpeed="100"
                             :backSpeed="60"
                         >
-                            <h2><span class="typing"></span></h2>
+                            <h2 class="text-xl-h4"><span class="typing"></span></h2>
                         </vue-typed-js>
                     </client-only>
                     <v-btn
                         :to="{ name: 'blog' }"
                         outlined
                         color="black"
-                        class="mt-2"
-                        large
+                        class="mt-2 text-xl-h5"
+                        :large="this.$vuetify.breakpoint.name != 'xl'"
+                        :x-large="this.$vuetify.breakpoint.name === 'xl'"
                     >
                         Velo tú mismo | Blog
                     </v-btn>

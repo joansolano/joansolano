@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="error" :style="this.$vuetify.breakpoint.name === 'xl' ? { marginTop: '90px' } : ''">
     <v-container fluid>
       <v-row align="center">
         <v-col align="center" justify="center" cols="12">
@@ -19,6 +19,8 @@
         <v-col align="center" justify="center">
           <v-btn
             :to="{ name: 'index' }"
+            class="text-xl-h4"
+            :x-large="this.$vuetify.breakpoint.name === 'xl'"
           >
             Inicio
             <fa icon="undo-alt" class="ml-2"/>

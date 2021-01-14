@@ -7,12 +7,12 @@
             <div class="shadow">
                 <v-row class="centered" wrap>
                     <v-col cols="12">
-                        <p class="text-h4 text-sm-h3 text-md-h2 font-weight-black">{{article.title}}</p>
+                        <p class="text-h4 text-sm-h3 text-md-h2 text-xl-h1 font-weight-black">{{article.title}}</p>
                     </v-col>
                     <author :author="article.author"/>
                 </v-row>
             </div>
-            <h6 class="bottom-right">Foto por: {{ article.imgauthor }}</h6>
+            <h6 class="bottom-right text-xl-h5">Foto por: {{ article.imgauthor }}</h6>
         </div>
         
         <v-container class="mt-5">
@@ -21,9 +21,9 @@
                     cols="11" 
                     sm="10"
                 >
-                    <p class="text-body-2 text-sm-body-1 text-md-subtitle-2">{{ formatDate(article.createdAt) }}</p>
-                    <p class="text-h6 text-md-h5 font-weight-bold">{{ article.description }}</p>
-                    <nuxt-content :document="article"/>
+                    <p class="text-body-2 text-sm-body-1 text-md-subtitle-2 text-xl-subtitle-1">{{ formatDate(article.createdAt) }}</p>
+                    <p class="text-h6 text-md-h5 text-xl-h4 font-weight-bold">{{ article.description }}</p>
+                    <nuxt-content :document="article" class="text-xl-h5"/>
                     <iframe
                         v-if="article.urlvideo" 
                         :width="heightAndWidth.width" 
@@ -41,9 +41,9 @@
                         allowfullscreen
                     >
                     </iframe>
-                    <p>Post actualizado por última vez: {{formatDate(article.updatedAt)}}</p>
+                    <p class="text-body-2 text-sm-body-1 text-md-subtitle-2 text-xl-subtitle-1">Post actualizado por última vez: {{formatDate(article.updatedAt)}}</p>
                     <v-divider></v-divider>
-                    <prev-next :prev="prev" :next="next" :name="'blog-slug'" class="mt-4 mb-2"/>
+                    <prev-next :prev="prev" :next="next" :name="'blog-slug'" class="mt-4 mb-2 text-xl-h6"/>
                 </v-col>
             </v-row>
         </v-container>
@@ -157,8 +157,8 @@ export default {
                     width: 720
                 }
                 case 'xl': return {
-                    height: 460,
-                    width: 860
+                    height: 560,
+                    width: 960
                 }
             }
         }
@@ -183,6 +183,6 @@ export default {
 }
 .shadow {
     height: 100%;
-    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    background: rgba(0,0,0,0.5);
 }
 </style>

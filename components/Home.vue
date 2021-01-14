@@ -16,7 +16,7 @@
         sm="6"
     >
         <client-only>
-            <p class="text-h5 text-md-h4">Hola, mi nombre es</p>
+            <p class="text-h5 text-md-h4 text-xl-h3">Hola, mi nombre es</p>
             <p class="text-h3 text-sm-h2 text-md-h1 font-weight-bold">Joan Solano</p>
             <vue-typed-js 
                 :strings="strings"
@@ -25,7 +25,7 @@
                 :backSpeed="60"
             >
                 <p
-                    class="text-h5 text-md-h4"
+                    class="text-h5 text-md-h4 text-xl-h3"
                 >
                     Y soy <span class="typing green--text"></span>y mucho más
                 </p>
@@ -34,7 +34,7 @@
                 :to="{ name: 'aboutme' }"
                 large
                 :x-large="this.$vuetify.breakpoint.name === 'xs' ? false : true"
-                color="green"
+                color="green text-xl-h5"
             >
                 Conóceme
             </v-btn>
@@ -42,7 +42,7 @@
                 :to="{ name: 'contactme' }"
                 large
                 :x-large="this.$vuetify.breakpoint.name === 'xs' ? false : true"
-                color="green"
+                color="green text-xl-h5"
             >
                 Contáctame
             </v-btn>

@@ -1,11 +1,11 @@
 <template>
-  <div id="projects">
+  <div id="projects" :style="screen2k ? { marginTop: '90px' } : ''">
     <v-container>
       <v-row align="center" justify="center" wrap>
         <v-col cols="12" align="center" justify="center">
-          <p class="text-h4 text-sm-h3 text-md-h2">Proyectos</p>
+          <p class="text-h4 text-sm-h3 text-md-h2 text-xl-h1">Proyectos</p>
         </v-col>
-        <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Qué hago</span>&nbsp;&boxh;&boxh;&boxh;</p>
+        <p class="text-h6 text-sm-h5 text-md-h4 text-xl-h3">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Qué hago</span>&nbsp;&boxh;&boxh;&boxh;</p>
       </v-row>
       <v-row align="center" justify="center" class="mb-2 mt-2">
         <v-col 
@@ -20,23 +20,24 @@
                 :src="require(`~/assets/images/${ project.img }`)"
                 class="white--text align-end"
                 gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)"
-                height="300px"
+                :height="screen2k ? '500px' : '300px'"
               >
                 <v-card-title
                   v-text="project.title"
-                  class="mt-2 mb-2  text-h5"
+                  class="mt-2 mb-2 text-h5 text-xl-h3"
                 ></v-card-title>
                 <v-card-subtitle
                   v-text="project.description"
-                  class="text-subtitle-1"
+                  class="text-subtitle-1 text-xl-h5"
                 ></v-card-subtitle>
               </v-img>
               <v-card-actions>
                 <v-btn
                   text
                   outlined
-                  large
-                  class="ml-2 green--text font-weight-black text-subtitle-1"
+                  :x-large="screen2k"
+                  :large="!screen2k"
+                  class="ml-2 green--text font-weight-black text-subtitle-1 text-xl-h5"
                   nuxt
                 >
                   Leer más
@@ -47,37 +48,6 @@
           </v-card>
         </v-col>
       </v-row>
-      <!--
-      <v-carousel
-        cycle
-      >
-        <v-carousel-item
-          v-for="project of projects"
-          :key="project.slug"
-          :src="require(`~/assets/images/${project.img}`)"
-        >
-          <div>
-            <v-row class="centered" align="center">
-              <v-col cols="12">
-                <h1 class="text-h4 text-sm-h3 text-md-h2">{{project.title}}</h1>
-              </v-col>
-              <v-col>
-                <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">
-                  <v-btn
-                    outlined
-                    x-large
-                    nuxt
-                  > 
-                    Leer más
-                    <fa icon="arrow-circle-right" class="ml-2"/>
-                  </v-btn>
-                </nuxt-link>
-              </v-col>
-            </v-row>
-          </div>
-        </v-carousel-item>
-      </v-carousel>
-      -->
     </v-container>
   </div>
 </template>
@@ -117,6 +87,9 @@ export default {
       }
       return getSiteMeta(metaData)
     },
+    screen2k() {
+      return this.$vuetify.breakpoint.name === 'xl'
+    }
   }
 }
 </script>

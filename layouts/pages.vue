@@ -3,7 +3,7 @@
         <NavDrawer :links="links" v-model="sidebar"/>
         <v-app-bar 
             app 
-            height="60px" 
+            :height="screen2k ? '0px' : '60px'" 
             hide-on-scroll 
             elevation="0"
             flat
@@ -17,6 +17,7 @@
                 text
                 large
                 class="ml-5"
+                :style="screen2k ? { transform: 'translateY(40px)' } : ''"
             >
                 <v-img
                     alt="JoanSolano Logo"
@@ -24,10 +25,15 @@
                     class="shrink"
                     contain
                     transition="scale-transition"
-                    width="50"
+                    :width="screen2k ? 70 : 50"
                 />
             </v-btn>
-            <v-toolbar-title class="ml-2 font-weight-black">Joan Solano</v-toolbar-title>
+            <v-toolbar-title 
+                class="ml-2 font-weight-black"
+                :style="screen2k ? { transform: 'translateY(40px)' } : ''"
+            >
+                Joan Solano
+            </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items 
                 v-for="(link, index) of links" 
@@ -40,6 +46,8 @@
                         name: `${link.url}`
                     }"
                     :color="`${ link.name === 'Contáctame' ? 'green' : '' }`"
+                    :x-large="screen2k"
+                    v-if="!screen2k"
                 >
                     {{ link.name }}
                 </v-btn>
@@ -48,10 +56,10 @@
                 <v-app-bar-nav-icon @click="sidebar = !sidebar"></v-app-bar-nav-icon>
             </span>
         </v-app-bar>
-        <v-main class="back-color">
+        <v-main>
             <nuxt/>
         </v-main>
-        <v-footer padless app absolute>
+        <v-footer padless app :absolute="screen2k ? false : true">
             <v-col
                 class="text-center"
                 cols="12"
@@ -95,14 +103,14 @@ export default {
                 },
             ]
         }
+    },
+    computed: {
+        screen2k() {
+            return this.$vuetify.breakpoint.name === 'xl'
+        }
     }
 }
 </script>
 
 <style scoped>
-/*
-.back-color {
-    
-}
-*/
 </style>

@@ -1,11 +1,11 @@
 <template>
-    <div id="blog">
+    <div id="blog" :style="screen2k ? { marginTop: '90px' } : ''">
         <v-container>
             <v-row align="center" justify="center" wrap>
             <v-col cols="12" align="center" justify="center">
-                <p class="text-h4 text-sm-h3 text-md-h2">Blog</p>
+                <p class="text-h4 text-sm-h3 text-md-h2 text-xl-h1">Blog</p>
             </v-col>
-            <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Qué pienso</span>&nbsp;&boxh;&boxh;&boxh;</p>
+            <p class="text-h6 text-sm-h5 text-md-h4 text-xl-h3">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Qué pienso</span>&nbsp;&boxh;&boxh;&boxh;</p>
             </v-row>
             <v-row align="center" justify="center" wrap>
                 <v-col cols="12" sm="8" md="6" align="center" justify="center">
@@ -30,14 +30,15 @@
                                 <v-img
                                     :src="require(`~/assets/images/${article.img}`)"
                                 ></v-img>
-                                <v-card-title v-text="article.title" class="green--text text-h5"></v-card-title>
-                                <v-card-subtitle v-text="article.description" class="text-subtitle-1"></v-card-subtitle>
+                                <v-card-title v-text="article.title" class="green--text text-h5 text-xl-h3"></v-card-title>
+                                <v-card-subtitle v-text="article.description" class="text-subtitle-1 text-xl-h6 mt-2"></v-card-subtitle>
                                 <v-card-actions>
                                     <v-btn
                                         text
-                                        class="ml-1 mb-1 green--text font-weight-black text-subtitle-1"
+                                        class="ml-1 mb-1 green--text font-weight-black text-subtitle-1 text-xl-h6"
                                         nuxt
                                         outlined
+                                        :large="screen2k"
                                     >   
                                         Leer más 
                                         <fa icon="arrow-right" class="ml-2 white--text"/>
@@ -97,9 +98,9 @@ export default {
             }
             return getSiteMeta(metaData)
         },
-    },
-    mounted() {
-        console.log(11 %  6)
+        screen2k() {
+            return this.$vuetify.breakpoint.name === 'xl'
+        }
     }
 }
 </script>

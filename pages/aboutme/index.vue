@@ -1,17 +1,17 @@
 <template>
   <div id="aboutme">
-      <v-container>
+      <v-container :class="screen2k ? 'd-flex flex-column': ''" :style="screen2k ? 'height: 90vh;' : ''">
         <v-row align="center" justify="center" wrap>
-          <v-col cols="12" align="center" justify="center">
-            <p class="text-h4 text-sm-h3 text-md-h2">Conóceme</p>
+          <v-col cols="12" align="center">
+            <p class="text-h4 text-sm-h3 text-md-h2 text-xl-h1">Conóceme</p>
           </v-col>
-          <p class="text-h6 text-sm-h5 text-md-h4">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Quién soy</span>&nbsp;&boxh;&boxh;&boxh;</p>
+          <p class="text-h6 text-sm-h5 text-md-h4 text-xl-h3">&boxh;&boxh;&boxh;&nbsp;<span class="green--text">Quién soy</span>&nbsp;&boxh;&boxh;&boxh;</p>
         </v-row>
-        <v-row class="mt-2" align="center">
+        <v-row class="mt-2" :align="screen2k ? 'start' : 'center'">
           <v-col
             cols="12"
             sm="6"
-            class="d-flex justify-lg-center justify-xl-center"
+            :class="screen2k ? 'd-flex flex-column align-center': 'd-flex flex-column align-end'"
           >
             <v-img
               :src="require('~/assets/images/joansolano.jpg')"
@@ -27,18 +27,18 @@
                 :backSpeed="60"
               >
                 <p
-                  class="text-h6 text-sm-h5 text-md-h4"
+                  class="text-h6 text-sm-h5 text-md-h4 text-xl-h3"
                 >
                   Soy Joan y soy <span class="typing green--text"></span>y mucho más
                 </p>
               </vue-typed-js> 
             </client-only>
-            <p>Soy un joven optimista que siempre ha creído que nunca hay que parar de aprender. Esto me impulsó a estudiar ingeniería mecatrónica con el afán de comprender mucho mejor cómo funciona y cómo se construye el mundo actual y hacia que mundo nos llevará lo que hacemos ahora. <br> Aún no entiendo todo por completo y no soy el mejor en lo que hago, es cierto. Sin embargo, siempre pongo el corazón en todo lo que hago y con toda la disposición para ayudar a las personas que tienen necesidades. No lo he hecho mucho pero espero poder hacerlo.</p>
+            <p class="text-xl-h5">Soy un joven optimista que siempre ha creído que nunca hay que parar de aprender. Esto me impulsó a estudiar ingeniería mecatrónica con el afán de comprender mucho mejor cómo funciona y cómo se construye el mundo actual y hacia que mundo nos llevará lo que hacemos ahora. <br> Aún no entiendo todo por completo y no soy el mejor en lo que hago, es cierto. Sin embargo, siempre pongo el corazón en todo lo que hago y con toda la disposición para ayudar a las personas que tienen necesidades. No lo he hecho mucho pero espero poder hacerlo.</p>
             <v-btn
               rounded
               outlined
               x-large
-              class="mb-2"
+              class="mb-2 text-xl-h5"
               @click="showAlert"
             >
               Descargar CV
@@ -47,7 +47,7 @@
             <v-divider></v-divider>
             <v-row>
               <v-col cols="12">
-                <p class="text-subtitle-1 text-sm-h6 text-md-h5 mb-0">Redes</p>
+                <p class="text-subtitle-1 text-sm-h6 text-md-h5 text-xl-h4 mb-0">Redes</p>
               </v-col>
               <v-col v-for="(network, index) of networks" :key="index">
                 <v-btn
@@ -57,7 +57,7 @@
                   rel="noreferrer noopener"
                   fab
                 >
-                  <fa :icon="['fab', network.icon]" size="2x"/>
+                  <fa :icon="['fab', network.icon]" :size="screen2k ? '3x' : '2x'"/>
                 </v-btn>
               </v-col>
             </v-row>
@@ -126,6 +126,9 @@ export default {
         url: "https://joansolano.herokuapp.com/aboutme",
       }
       return getSiteMeta(metaData)
+    },
+    screen2k() {
+      return this.$vuetify.breakpoint.name === 'xl'
     }
   },
   methods: {

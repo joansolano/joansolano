@@ -7,28 +7,22 @@
             color="rgba(255, 255, 255, 0)"
             elevation="0"
         >
-            <v-btn
-                dark
-                icon
-                :to="{
-                    name: 'index'
-                }"
-                text
-                large
-                class="ml-5 btn-log"
-            >
-                <v-img
-                    alt="JoanSolano Logo"
-                    :src="require('~/static/logo_joansolano.svg')"
-                    class="shrink"
-                    contain
-                    transition="scale-transition"
-                    width="50"
-                />
-            </v-btn>
-            <v-spacer></v-spacer>
+            <v-img
+                alt="JoanSolano Logo"
+                :src="require('~/static/logo_joansolano.svg')"
+                class="shrink"
+                contain
+                transition="scale-transition"
+                :width="screen2k ? 70 : 50"
+                :style="{ transform: 'translateY(40px)' }"
+            />
+            <v-spacer v-if="!screen2k"></v-spacer>
             <span>
-                <v-app-bar-nav-icon @click="sidebar = !sidebar" class="app-icon"></v-app-bar-nav-icon>
+                <v-app-bar-nav-icon 
+                    @click="sidebar = !sidebar" 
+                    :style="{ transform: 'translateY(40px)' }"
+                    v-if="!screen2k"
+                ></v-app-bar-nav-icon>
             </span>
         </v-app-bar>
         <v-main>
@@ -70,6 +64,11 @@ export default {
                 },
             ]
         }
+    },
+    computed: {
+        screen2k() {
+            return this.$vuetify.breakpoint.name === 'xl'
+        }
     }
 }
 </script>
@@ -77,11 +76,5 @@ export default {
 <style scoped>
 .v-app-bar {
     z-index: 1 !important;
-}
-.btn-log {
-    transform: translateY(30px);
-}
-.app-icon {
-    transform: translateY(30px);
 }
 </style>
