@@ -57,7 +57,7 @@
                             @drop="onDrop($event)"
                             @dragover.prevent
                             @dragenter.prevent
-                            class="divImg"
+                            class="divImg d-flex justify-center align-center"
                         >
                             <img src="" alt="" draggable="false">
                         </div>
@@ -118,7 +118,18 @@ export default {
             imgs: [
                 {
                     id: 'cap1',
-                    src: require('../assets/svg/cap1.svg')
+                    src: require('../assets/svg/cap1.svg'),
+                    style: {
+                        md: {
+                            height: '33px', width: '38px', left: '63%', top: '53%'
+                        },
+                        lg: {
+                            height: '33px', width: '38px', left: '63.5%', top: '54%'
+                        },
+                        xl: {
+                            height: '36px', width: '41px', left: '63.5%', top: '54%'
+                        }
+                    }
                 },
                 {
                     id: 'cap2',
@@ -248,14 +259,11 @@ export default {
     computed: {
         widthImg() {
             switch (this.$vuetify.breakpoint.name) {
-                case 'xs': 
-                    return 350
-                case 'sm':
-                    return 450
-                case 'md':
-                    return 500
-                case 'lg':
-                    return 650
+                case 'xs': return 350
+                case 'sm': return 450
+                case 'md': return 500
+                case 'lg': return 650
+                case 'xl': return 1000
             }
         },
         mobileAndTablet() {
@@ -270,16 +278,18 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-style: solid;
+    border-color: red;
 }
 #ecImg:last-child {
     position: relative;
 }
 #cap1d {
     position: absolute;
-    left: 63.5%;
+    left: 63%;
     top: 53%;
-    height: 35px;
-    width: 35px;
+    height: 33px;
+    width: 38px;
     border-top-left-radius: 50px;
 }
 #cap2d {

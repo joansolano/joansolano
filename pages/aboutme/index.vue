@@ -11,6 +11,7 @@
           <v-col
             cols="12"
             sm="6"
+            class="d-flex justify-lg-center justify-xl-center"
           >
             <v-img
               :src="require('~/assets/images/joansolano.jpg')"

@@ -37,7 +37,7 @@
           </p>
 
           <v-card
-            max-width="300"
+            max-width="500"
             tile
             class="mb-4"
             flat

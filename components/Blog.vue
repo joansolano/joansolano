@@ -76,6 +76,7 @@ export default {
                 case 'xs': return 350
                 case 'sm': return 750
                 case 'lg': return 950
+                case 'xl': return 1350
             }
         }
     }
