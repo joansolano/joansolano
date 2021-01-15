@@ -2,13 +2,15 @@
     <div>
         <v-row align="center" justify="center" class="ml-2" wrap>
             <v-col cols="5">
-                <v-avatar height="80px" width="80px">
+                <v-avatar 
+                    :height="this.$vuetify.breakpoint.name === 'xl' ? '120px' : '80px'" 
+                    :width="this.$vuetify.breakpoint.name === 'xl' ? '120px' : '80px'">
                     <img :src="require(`~/assets/images/${author.image}`)">
                 </v-avatar>
             </v-col>
             <v-col>
-                <p class="text-body-1 text-sm-subtitle-2 mb-1">ESCRITO POR</p>
-                <p class="text-subtitle-2 text-sm-subtitle-1 font-weight-bold">{{ author.name }}</p>
+                <p class="text-body-1 text-sm-subtitle-2 text-xl-h6 mb-1">ESCRITO POR</p>
+                <p class="text-subtitle-2 text-sm-subtitle-1 text-xl-h5 font-weight-bold">{{ author.name }}</p>
             </v-col>
         </v-row>
     </div>

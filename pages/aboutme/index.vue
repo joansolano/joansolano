@@ -34,16 +34,21 @@
               </vue-typed-js> 
             </client-only>
             <p class="text-xl-h5">Soy un joven optimista que siempre ha creído que nunca hay que parar de aprender. Esto me impulsó a estudiar ingeniería mecatrónica con el afán de comprender mucho mejor cómo funciona y cómo se construye el mundo actual y hacia que mundo nos llevará lo que hacemos ahora. <br> Aún no entiendo todo por completo y no soy el mejor en lo que hago, es cierto. Sin embargo, siempre pongo el corazón en todo lo que hago y con toda la disposición para ayudar a las personas que tienen necesidades. No lo he hecho mucho pero espero poder hacerlo.</p>
-            <v-btn
-              rounded
-              outlined
-              x-large
-              class="mb-2 text-xl-h5"
-              @click="showAlert"
+            <a 
+              :href="development ? 'http://localhost:3000/joan_solano_cv.pdf' : 'https://joansolano.herokuapp.com/joan_solano_cv.pdf'"
+              target="_blank"
+              ref="noreferrer noopener"
             >
-              Descargar CV
-              <fa icon="download" class="ml-2"/>
-            </v-btn>
+              <v-btn
+                rounded
+                outlined
+                x-large
+                class="mb-2 text-xl-h5"
+              >
+                Descargar CV
+                <fa icon="download" class="ml-2"/>
+              </v-btn>
+            </a>
             <v-divider></v-divider>
             <v-row>
               <v-col cols="12">
@@ -100,7 +105,8 @@ export default {
           url: 'https://github.com/joansolano',
           icon: 'github'
         }
-      ]
+      ],
+      development: process.env.NODE_ENV !== 'production'
     }
   },
   head() {
@@ -130,14 +136,12 @@ export default {
     screen2k() {
       return this.$vuetify.breakpoint.name === 'xl'
     }
-  },
-  methods: {
-    showAlert() {
-      alert('Jajajaja... No hay nada para descargar')
-    }
   }
 }
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 </style>

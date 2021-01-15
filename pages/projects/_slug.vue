@@ -63,7 +63,7 @@
             </v-list>
           </v-card>
           
-          <nuxt-content :document="project" class="text-xl-h5"/>
+          <nuxt-content :document="project" class="text-xl-h5" id="conten"/>
 
           <p class="mt-3 text-body-2 text-sm-body-1 text-md-subtitle-2 text-xl-subtitle-1">Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
           <v-divider></v-divider>
@@ -161,6 +161,9 @@ export default {
       }
       return getSiteMeta(metaData)
     },
+  },
+  mounted() {
+    console.log(document.querySelector("#conten"))
   }
 }
 </script>

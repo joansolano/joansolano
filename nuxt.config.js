@@ -28,7 +28,7 @@ export default {
       },
       { property: "og:image:width", content: "740" },
       { property: "og:image:height", content: "300" },
-      { name: "twitter:site", content: "@joansolano21" },
+      { name: "twitter:site", content: "@joansesolano" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
@@ -36,7 +36,7 @@ export default {
       {
         hid: "canonical",
         rel: "canonical",
-        href: process.env.BASE_URL
+        href: "https://joansolano.herokuapp.com"
       }
     ]
   },
@@ -52,10 +52,6 @@ export default {
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
-
-  pwa: {
-    source: '~/static/favicon.ico'
-  },
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
@@ -98,15 +94,10 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     '@nuxtjs/sitemap'
   ],
-
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {
