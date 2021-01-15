@@ -11,7 +11,7 @@
           <v-col
             cols="12"
             sm="6"
-            :class="screen2k ? 'd-flex flex-column align-center': 'd-flex flex-column align-end'"
+            :class="screen2k ? 'd-flex flex-column align-center': ''"
           >
             <v-img
               :src="require('~/assets/images/joansolano.jpg')"

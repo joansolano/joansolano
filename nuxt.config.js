@@ -148,6 +148,7 @@ export default {
         fs: 'empty',
         net: 'empty'
       }
-    }
+    },
+    extractCSS: true
   }
 }
