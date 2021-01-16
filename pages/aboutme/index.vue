@@ -13,10 +13,12 @@
             sm="6"
             :class="screen2k ? 'd-flex flex-column align-center': ''"
           >
-            <v-img
-              :src="require('~/assets/images/joansolano.jpg')"
-              max-width="500"
-            ></v-img>
+            <img
+              :data-src="require('~/assets/images/joansolano.jpg')"
+              :src="require('~/assets/lazy_img.png')"
+              :style="{ maxWidth: `${ widthImg }px` }"
+              :class="nameClass"
+            >
           </v-col>
           <v-col>
             <client-only>
@@ -74,13 +76,14 @@
 
 <script>
 import getSiteMeta from '~/utils/getSiteMeta'
+import lazyLoad from '~/utils/lazyLoad'
 
 export default {
   layout: 'pages',
   data() {
     return {
       strings: [
-        'ingeniero mecatrónico',
+        'ing. mecatrónico',
         'blogger',
         'entusiasta'
       ],
@@ -106,7 +109,8 @@ export default {
           icon: 'github'
         }
       ],
-      development: process.env.NODE_ENV !== 'production'
+      development: process.env.NODE_ENV !== 'production',
+      nameClass: 'lzy-img-about'
     }
   },
   head() {
@@ -135,7 +139,19 @@ export default {
     },
     screen2k() {
       return this.$vuetify.breakpoint.name === 'xl'
+    },
+    widthImg() {
+      switch (this.$vuetify.breakpoint.name) {
+        case 'xs': return 350
+        case 'sm': return 370
+        case 'md': return 430
+        case 'lg': return 550
+        case 'xl': return 600
+      }
     }
+  },
+  mounted() {
+    lazyLoad(this.nameClass, true)
   }
 }
 </script>

@@ -13,14 +13,14 @@
           sm="6"
         >
           <p class="text-h6 text-sm-h5 text-md-h4 text-xl-h3">Qué quieres saber</p>
-          <p class="text-xl-h5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore velit officia aut optio eum minus! Fugiat cupiditate quod, distinctio aspernatur nemo voluptate a id, unde architecto, corporis deserunt voluptates illo!</p>
+          <p class="text-xl-h5">Puedes contactarme si tienes interés en conocer más a profundidad lo que hago y cómo lo hago. Además, si necesitas desarrollar una página web personal o para tu negocio podemos hacer un acuerdo para llevar el proyecto a buen puerto.</p>
           <v-row align="center">
             <v-col cols="2" class="text-center">
               <fa icon="user-circle" :size="screen2k ? '4x' : '3x'"/>
             </v-col>
             <v-col class="mt-2">
               <p class="text-h6 text-xl-h4 font-weight-bold ma-0">Nombre</p>
-              <p class="text-xl-h5">Joan Solano</p>
+              <p class="text-xl-h5">Joan Sebastian Solano García</p>
             </v-col>
           </v-row>
           <v-row align="center">
@@ -29,7 +29,7 @@
             </v-col>
             <v-col class="mt-2">
               <p class="text-h6 text-xl-h4 font-weight-bold ma-0">Dirección</p>
-              <p class="text-xl-h5">Timaná, Huila</p>
+              <p class="text-xl-h5">Timaná, Huila, Colombia</p>
             </v-col>
           </v-row>
           <v-row align="center">
@@ -83,10 +83,18 @@
               class="mt-2 text-xl-h5"
               block
               :x-large="screen2k"
+              v-if="isReady"
             >
               Enviar
               <fa icon="share-square" class="ml-2"/>
             </v-btn>
+            <p 
+              v-else 
+              class="text-subtitle-2 text-md-subtitle-1 text-xl-h5"
+            >
+              <span class="green--text font-weight-black">Nota:</span> 
+              <span class="font-italic">El envio del formulario no está disponible por el momento. Se agregará en una futura actualización.</span>
+            </p>
           </v-form>
         </v-col>
       </v-row>
@@ -120,7 +128,8 @@ export default {
       messageRules: [
         v => !!v || 'El mensaje es requerido',
         v => v.length <= 250 || 'Máximo 250 caracteres'
-      ]
+      ],
+      isReady: false
     }
   },
   methods: {

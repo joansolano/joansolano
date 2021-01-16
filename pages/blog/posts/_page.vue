@@ -27,9 +27,12 @@
                             :class="{ 'on-hover': hover }"
                         >
                             <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
-                                <v-img
-                                    :src="require(`~/assets/images/${article.img}`)"
-                                ></v-img>
+                                <img
+                                    :data-src="require(`~/assets/images/${article.img}`)"
+                                    :src="require('~/assets/lazy_img.png')"
+                                    style="width: 100%;"
+                                    :class="nameClass"
+                                >
                                 <v-card-title v-text="article.title" class="green--text text-h5 text-xl-h3"></v-card-title>
                                 <v-card-subtitle v-text="article.description" class="text-subtitle-1 text-xl-h6 mt-2"></v-card-subtitle>
                                 <v-card-actions>
@@ -63,6 +66,7 @@
 <script>
 import getContent from '~/utils/getContent'
 import getSiteMeta from '~/utils/getSiteMeta'
+import lazyLoad from '~/utils/lazyLoad'
 
 export default {
     layout: 'pages',
@@ -72,6 +76,7 @@ export default {
         return {
             allArticles: content.allArticles,
             paginatedArticles: content.paginatedArticles,
+            nameClass:  'lzy-img-page-blog'
         }
     },
     head() {
@@ -101,6 +106,9 @@ export default {
         screen2k() {
             return this.$vuetify.breakpoint.name === 'xl'
         }
+    },
+    mounted() {
+        lazyLoad(this.nameClass, false)
     }
 }
 </script>

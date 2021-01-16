@@ -46,11 +46,17 @@
                 <v-col
                     cols="12"
                 >
-                    <v-img
-                        :src="require('~/assets/svg/empty_circuit.png')"
-                        :max-width="widthImg"
-                        id="ecImg"
-                    >
+                    <div :style="{ 
+                        position: 'relative',
+                        textAlign: 'center'
+                    }">
+                        <img
+                            :src="require('~/assets/svg/empty_circuit.png')"
+                            :style="{
+                                width: `${ widthImg }px`,
+                            }"
+                            id="ecImg"
+                        >
                         <div 
                             v-for="(item, index) of cpImgs"
                             :key="index"
@@ -63,7 +69,7 @@
                         >
                             <img src="" alt="" draggable="false">
                         </div>
-                    </v-img>
+                    </div>
                 </v-col>
                 <v-col v-if="!successGame">
                     <v-sheet
@@ -79,17 +85,17 @@
                                 :key="index"
                             >
                                 <v-card
-                                    height="90"
+                                    height="80"
                                     width="100"
-                                    class="ma-2 pa-2"
+                                    class="ma-2"
                                 >
-                                    <v-img
+                                    <img
                                         :src="img.src"
-                                        width="80"
+                                        :style="{ width: '80px', height: '80px' }"
                                         :id="img.id"
                                         :draggable="successGame ? false : true"
                                         @dragstart="startDrag($event, img)"
-                                    ></v-img>
+                                    >
                                 </v-card>
                             </v-slide-item>
                         </v-slide-group>

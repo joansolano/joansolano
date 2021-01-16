@@ -6,10 +6,12 @@
         justify="center" 
         align="center"
     >
-        <v-img 
-            :src="require('~/assets/svg/circuit_iso.png')"
-            :max-width="widthImg"
-        ></v-img>
+        <img 
+            :data-src="require('~/assets/svg/circuit_iso.png')"
+            :src="require('~/assets/lazy_img.png')"
+            :style="{ width: `${ widthImg }px` }"
+            :class="nameClass"
+        >
     </v-col>
     <v-col 
         cols="12" 
@@ -52,6 +54,8 @@
 </template>
 
 <script>
+import lazyLoad from '~/utils/lazyLoad.js'
+
 export default {
     name: 'Home',
     data() {
@@ -60,19 +64,23 @@ export default {
                 'ing. mecatrónico',
                 'blogger',
                 'entusiasta'
-            ]
+            ],
+            nameClass: 'lzy-img-home'
         }
     },
     computed: {
         widthImg() {
             switch (this.$vuetify.breakpoint.name) {
-                case 'xs': return 350
-                case 'sm': return 450
-                case 'md': return 550
-                case 'lg': return 700
+                case 'xs': return 400
+                case 'sm': return 370
+                case 'md': return 450
+                case 'lg': return 640
                 case 'xl': return 950
             }
         }
+    },
+    mounted() {
+        lazyLoad(this.nameClass, true)
     }
 }
 </script>

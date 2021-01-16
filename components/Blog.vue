@@ -1,6 +1,12 @@
 <template>
     <v-row>
-        <v-col cols="12" align="center" justify="center" class="hidden-sm-and-up type-text">
+        <v-col 
+            cols="12" 
+            align="center" 
+            justify="center" 
+            class="hidden-sm-and-up"
+            :style="{ transform: 'translateY(50px)' }"
+        >
             <client-only>
                 <vue-typed-js 
                     :strings="textXs"
@@ -21,13 +27,29 @@
             </v-btn>
         </v-col>
         <v-col cols="12" align="center" justify="center">
-            <v-img
-                :src="require('~/assets/svg/Typewriter.svg')"
-                :max-width="width"
-                class="typewritter"
-            >
+            <div :style="{
+                position: 'relative',
+                textAlign: 'center'
+            }">
+                <img
+                    :data-src="require('~/assets/svg/Typewriter.svg')"
+                    :src="require('~/assets/lazy_img.png')"
+                    :style="{ 
+                        width: `${ widthImg.width }px`,
+                        transform: 'translateY(15%)'
+                    }"
+                    :class="nameClass"
+                >
                 <div 
-                    class="hidden-xs-only text-typer mt-2"
+                    class="hidden-xs-only mt-2"
+                    :style="{
+                        position: 'absolute',
+                        color: '#121212',
+                        width: `${ widthImg.width - widthImg.diff }px`,
+                        top: '30%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)'
+                    }"
                 >
                     <client-only>
                         <vue-typed-js 
@@ -50,12 +72,14 @@
                         Velo tú mismo | Blog
                     </v-btn>
                 </div>
-            </v-img>
+            </div>
         </v-col>
     </v-row>
 </template>
 
 <script>
+import lazyLoad from "~/utils/lazyLoad.js";
+
 export default {
     name: 'Blog',
     data() {
@@ -68,31 +92,41 @@ export default {
                 'Alguna vez escuché que escribir es la forma más fácil de influenciar a las personas.', 
                 'Además, es la mejor forma de plasmar lo que pienso. Por otro lado, no necesito mucho para hacerlo.', 
                 'Tan solo algo donde escribir y mucha creatividad para saber como expresarme correctamente.'
-            ]
+            ],
+            nameClass: 'lzy-img-blog'
         }
     },
     computed: {
-        width() {
+        widthImg() {
             switch (this.$vuetify.breakpoint.name) {
-                case 'xs': return 350
-                case 'sm': return 750
-                case 'lg': return 950
-                case 'xl': return 1350
+                case 'xs': return {
+                    width: 400,
+                    diff: 0
+                }
+                case 'sm': return {
+                    width: 750,
+                    diff: 310
+                }
+                case 'md': return {
+                    width: 850,
+                    diff: 335
+                }
+                case 'lg': return {
+                    width: 950,
+                    diff: 380
+                }
+                case 'xl': return {
+                    width: 1350,
+                    diff: 540
+                }
             }
         }
+    },
+    mounted() {
+        lazyLoad(this.nameClass, true)
     }
 }
 </script>
 
 <style scoped>
-.typewritter {
-    transform: translateY(15%);
-}
-.type-text {
-    transform: translateY(50px);
-}
-.text-typer {
-    color: #121212;
-    width: 440px;
-}
 </style>

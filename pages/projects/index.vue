@@ -15,22 +15,46 @@
           sm="11"
         >
           <v-card>
-            <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">    
-              <v-img 
-                :src="require(`~/assets/images/${ project.img }`)"
-                class="white--text align-end"
-                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.8)"
-                :height="screen2k ? '500px' : '300px'"
-              >
-                <v-card-title
-                  v-text="project.title"
-                  class="mt-2 mb-2 text-h5 text-xl-h3"
-                ></v-card-title>
-                <v-card-subtitle
-                  v-text="project.description"
-                  class="text-subtitle-1 text-xl-h5"
-                ></v-card-subtitle>
-              </v-img>
+            <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">
+              <div :style="{
+                position: 'relative',
+                height: screen2k ? '500px' : '300px'
+              }">
+                <img 
+                  :data-src="require(`~/assets/images/${ project.img }`)"
+                  :src="require('~/assets/lazy_img.png')"
+                  :class="nameClass"
+                  :style="{
+                    objectFit: 'cover',
+                    height: screen2k ? '500px' : '300px',
+                    width: '100%'
+                  }"
+                >
+                <div 
+                  class="gradient"
+                  :style="{
+                    position: 'absolute',
+                    height: screen2k ? '500px' : '300px',
+                    width: '100%',
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0))',
+                    transform: screen2k ? 'translateY(-101%)' : 'translateY(-102%)'
+                  }"
+                >
+                </div>
+                <div :style="{
+                  position: 'absolute',
+                  transform: 'translateY(-110%)'
+                }">
+                  <v-card-title
+                    v-text="project.title"
+                    class="mt-2 mb-2 text-h5 text-xl-h3 white--text"
+                  ></v-card-title>
+                  <v-card-subtitle
+                    v-text="project.description"
+                    class="text-subtitle-1 text-xl-h5 white--text"
+                  ></v-card-subtitle>
+                </div>
+              </div>  
               <v-card-actions>
                 <v-btn
                   text
@@ -55,13 +79,17 @@
 <script>
 import getProjects from '~/utils/getProjects'
 import getSiteMeta from '~/utils/getSiteMeta'
+import lazyLoad from '~/utils/lazyLoad'
 
 export default {
   layout: 'pages',
   async asyncData({ $content, params }) {
     const projects = await getProjects($content, params)
 
-    return projects
+    return {
+      projects: projects.projects,
+      nameClass: 'lzy-img-index-projects'
+    }
   },
   head() {
     return {
@@ -90,6 +118,9 @@ export default {
     screen2k() {
       return this.$vuetify.breakpoint.name === 'xl'
     }
+  },
+  mounted() {
+    lazyLoad(this.nameClass, false)
   }
 }
 </script>
