@@ -38,9 +38,6 @@ export default {
   width: 100%;
   height: 100vh;
 }
-.contain .section .content {
-  position: absolute;
-}
 .section#home {
   background: url("../static/background_joansolano.png") no-repeat center center fixed;
   background-size: cover;

@@ -13,7 +13,7 @@
                     <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
                         <v-list-item-title 
                             v-text="article.title"
-                            class="text-body-1 text-sm-subtitle-2 text-md-subtitle-1"
+                            class="text-body-1 text-sm-subtitle-2 text-md-subtitle-1 green--text"
                         >
                         </v-list-item-title>
                     </nuxt-link>
@@ -58,6 +58,5 @@ input[type="search"]::placeholder {
 }
 a {
     text-decoration: none;
-    color: #126d03;
 }
 </style>

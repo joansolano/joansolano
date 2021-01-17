@@ -6,7 +6,6 @@
             app
             right
             :temporary="screen2k ? false : true"
-            clipped
             :width="widthLogo.drawer"
         >
             <v-list class="ml-2 mr-2">
@@ -52,11 +51,6 @@
 <script>
 export default {
     name: 'NavDrawer',
-    data() {
-        return {
-            clipped: this.$vuetify.breakpoint.name === 'xl'
-        }
-    },
     props: {
         value: {
             type: Boolean,

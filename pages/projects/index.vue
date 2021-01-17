@@ -12,7 +12,7 @@
           v-for="project of projects"
           :key="project.slug"
           cols="12"
-          sm="11"
+          sm="10"
         >
           <v-card>
             <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">

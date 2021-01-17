@@ -4,8 +4,6 @@
         <v-app-bar 
             app 
             height="0px"
-            color="rgba(255, 255, 255, 0)"
-            elevation="0"
         >
             <v-img
                 alt="JoanSolano Logo"
@@ -72,9 +70,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-.v-app-bar {
-    z-index: 1 !important;
-}
-</style>

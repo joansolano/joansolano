@@ -71,7 +71,7 @@ export default {
     computed: {
         widthImg() {
             switch (this.$vuetify.breakpoint.name) {
-                case 'xs': return 400
+                case 'xs': return 350
                 case 'sm': return 370
                 case 'md': return 450
                 case 'lg': return 640
@@ -84,7 +84,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -101,7 +101,7 @@ export default {
       next,
       selectedItem: null,
       styleObject: {
-        height: '90vh',
+        height: '96vh',
         widht: '100%',
         backgroundImage: 'url(' + require(`~/assets/images/${project.img}`) +')',
         backgroundAttachment: 'fixed',

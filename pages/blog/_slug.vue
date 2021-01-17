@@ -78,7 +78,7 @@ export default {
             prev,
             next,
             styleObject: {
-                height: '90vh',
+                height: '96vh',
                 widht: '100%',
                 backgroundImage: 'url(' + require(`~/assets/images/${article.img}`) +')',
                 backgroundAttachment: 'fixed',

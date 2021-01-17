@@ -11,12 +11,12 @@
           <v-col
             cols="12"
             sm="6"
-            :class="screen2k ? 'd-flex flex-column align-center': ''"
+            :class="'d-flex flex-column align-center'"
           >
             <img
               :data-src="require('~/assets/images/joansolano.jpg')"
               :src="require('~/assets/lazy_img.png')"
-              :style="{ maxWidth: `${ widthImg }px` }"
+              :style="{ width: `${ widthImg }px` }"
               :class="nameClass"
             >
           </v-col>
@@ -142,7 +142,7 @@ export default {
     },
     widthImg() {
       switch (this.$vuetify.breakpoint.name) {
-        case 'xs': return 350
+        case 'xs': return 300
         case 'sm': return 370
         case 'md': return 430
         case 'lg': return 550

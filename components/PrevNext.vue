@@ -4,8 +4,9 @@
       <nuxt-link
         v-if="prev"
         :to="{ name: name, params: { slug: prev.slug } }"
+        class="green--text"
       >
-        <fa icon="angle-left"/>
+        <fa icon="angle-left" class="white--text"/>
         {{ prev.title }}
       </nuxt-link>
       <span v-else>&nbsp;</span>
@@ -13,9 +14,10 @@
       <nuxt-link
         v-if="next"
         :to="{ name: name, params: { slug: next.slug } }"
+        class="green--text"
       >
         {{ next.title }}
-        <fa icon="angle-right" />
+        <fa icon="angle-right" class="white--text"/>
       </nuxt-link>
       <span v-else>&nbsp;</span>
     </v-row>
@@ -44,9 +46,5 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
-  color: #126d03;
-}
-a svg {
-  color: white;
 }
 </style>
