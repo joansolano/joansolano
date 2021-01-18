@@ -16,11 +16,14 @@
             />
             <v-spacer v-if="!screen2k"></v-spacer>
             <span>
-                <v-app-bar-nav-icon 
+                <v-btn 
                     @click="sidebar = !sidebar" 
                     :style="{ transform: 'translateY(40px)' }"
                     v-if="!screen2k"
-                ></v-app-bar-nav-icon>
+                    icon
+                >
+                    <fa icon="bars" size="2x"/>
+                </v-btn>
             </span>
         </v-app-bar>
         <v-main>

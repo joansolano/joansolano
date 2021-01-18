@@ -35,7 +35,9 @@
                 >
                     <v-img
                         :src="require('~/assets/svg/circuit1.png')"
+                        alt="pcb_projects"
                         :max-width="widthImg"
+                        height="100%"
                     ></v-img>
                 </v-col>
             </v-row>
@@ -52,8 +54,11 @@
                     }">
                         <img
                             :src="require('~/assets/svg/empty_circuit.png')"
+                            alt="pcb_empty"
                             :style="{
                                 width: `${ widthImg }px`,
+                                height: '100%',
+                                transform: 'translate(-10px, 2px)'
                             }"
                             id="ecImg"
                         >
@@ -77,7 +82,6 @@
                         :max-width="widthImg"
                     >
                         <v-slide-group
-                            :show-arrows="this.$vuetify.breakpoint.name === 'xs' ? false : true"
                             multiple
                         >
                             <v-slide-item
@@ -91,6 +95,7 @@
                                 >
                                     <img
                                         :src="img.src"
+                                        :alt="img.id"
                                         :style="{ width: '80px', height: '80px' }"
                                         :id="img.id"
                                         :draggable="successGame ? false : true"
@@ -108,7 +113,7 @@
                             color="green"
                             @click="restartDnD(cpImgs)"
                             class="mt-4 text-xl-h5"
-                            :x-large="screen2k"
+                            :x-large="this.$vuetify.breakpoint.name === 'xl'"
                         >
                             Reiniciar
                             <fa icon="redo" class="ml-2"/>

@@ -5,7 +5,11 @@
                 <v-avatar 
                     :height="this.$vuetify.breakpoint.name === 'xl' ? '120px' : '80px'" 
                     :width="this.$vuetify.breakpoint.name === 'xl' ? '120px' : '80px'">
-                    <img :src="require(`~/assets/images/${author.image}`)">
+                    <img 
+                        :src="require(`~/assets/images/${author.image}`)"
+                        :alt="author.image"
+                        :style="{ width: '100%', height: '100%' }"
+                    >
                 </v-avatar>
             </v-col>
             <v-col>

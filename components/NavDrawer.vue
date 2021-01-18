@@ -17,7 +17,9 @@
                 <v-list-item class="mb-4 d-flex justify-center">
                     <v-img
                         :src="require('~/static/logo_joansolano.svg')"
+                        alt="logo_joansolano"
                         :max-width="widthLogo.img"
+                        height="100%"
                     ></v-img>
                 </v-list-item>
                 <v-list-item

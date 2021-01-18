@@ -80,7 +80,8 @@ export default {
         'faHome',
         'faBlog',
         'faTools',
-        'faPhone'
+        'faPhone',
+        'faBars'
       ],
       brands: [
         'faFacebook',
@@ -125,7 +126,8 @@ export default {
     defaultAssets: {
       font: {
         family: 'Open Sans'
-      }
+      },
+      icons: false,
     },
     theme: {
       dark: true,

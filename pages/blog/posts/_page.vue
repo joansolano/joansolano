@@ -30,7 +30,8 @@
                                 <img
                                     :data-src="require(`~/assets/images/${article.img}`)"
                                     :src="require('~/assets/lazy_img.png')"
-                                    style="width: 100%;"
+                                    :alt="article.img"
+                                    :style="{ width: '100%', height: '100%' }"
                                     :class="nameClass"
                                 >
                                 <v-card-title v-text="article.title" class="green--text text-h5 text-xl-h3"></v-card-title>

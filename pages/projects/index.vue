@@ -23,6 +23,7 @@
                 <img 
                   :data-src="require(`~/assets/images/${ project.img }`)"
                   :src="require('~/assets/lazy_img.png')"
+                  :alt="project.img"
                   :class="nameClass"
                   :style="{
                     objectFit: 'cover',

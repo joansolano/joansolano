@@ -53,7 +53,14 @@
                 </v-btn>
             </v-toolbar-items>
             <span class="hidden-md-and-up">
-                <v-app-bar-nav-icon @click="sidebar = !sidebar"></v-app-bar-nav-icon>
+                <v-btn
+                    @click="sidebar = !sidebar"
+                    icon
+                    small
+                    class="mr-2"
+                >
+                    <fa icon="bars" size="2x"/>
+                </v-btn>
             </span>
         </v-app-bar>
         <v-main>

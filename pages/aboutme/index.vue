@@ -16,7 +16,8 @@
             <img
               :data-src="require('~/assets/images/joansolano.jpg')"
               :src="require('~/assets/lazy_img.png')"
-              :style="{ width: `${ widthImg }px` }"
+              alt="joansolano"
+              :style="{ width: `${ widthImg }px`, height: '100%' }"
               :class="nameClass"
             >
           </v-col>

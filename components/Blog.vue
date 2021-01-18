@@ -34,8 +34,10 @@
                 <img
                     :data-src="require('~/assets/svg/Typewriter.svg')"
                     :src="require('~/assets/lazy_img.png')"
+                    alt="typewriter"
                     :style="{ 
                         width: `${ widthImg.width }px`,
+                        height: '100%',
                         transform: 'translateY(15%)'
                     }"
                     :class="nameClass"

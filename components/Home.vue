@@ -9,7 +9,8 @@
         <img 
             :data-src="require('~/assets/svg/circuit_iso.png')"
             :src="require('~/assets/lazy_img.png')"
-            :style="{ width: `${ widthImg }px` }"
+            alt="pcb"
+            :style="{ width: `${ widthImg }px`, height: '100%' }"
             :class="nameClass"
         >
     </v-col>
