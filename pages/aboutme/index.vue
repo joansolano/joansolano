@@ -14,8 +14,8 @@
             :class="'d-flex flex-column align-center'"
           >
             <img
-              :data-src="require('~/assets/images/joansolano.jpg')"
-              :src="require('~/assets/lazy_img.png')"
+              :data-src="require('~/assets/images/joansolano.webp')"
+              :src="require('~/assets/lazy_img.webp')"
               alt="joansolano"
               :style="{ width: `${ widthImg }px`, height: '100%' }"
               :class="nameClass"

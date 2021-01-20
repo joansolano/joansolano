@@ -7,8 +7,8 @@
         align="center"
     >
         <img 
-            :data-src="require('~/assets/svg/circuit_iso.png')"
-            :src="require('~/assets/lazy_img.png')"
+            :data-src="require('~/assets/svg/circuit_iso.webp')"
+            :src="require('~/assets/lazy_img.webp')"
             alt="pcb"
             :style="{ width: `${ widthImg }px`, height: '100%' }"
             :class="nameClass"

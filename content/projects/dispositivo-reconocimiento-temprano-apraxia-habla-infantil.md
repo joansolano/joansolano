@@ -1,7 +1,7 @@
 ---
 title: Dispositivo para reconocimiento temprano de apraxia del habla infantil
 description: Desarrollo de dispositivo para la grabación de audio de bebes para análisis del habla
-img: felicidadmasalla.jpg
+img: felicidadmasalla.webp
 alt: felicidadmasalla
 github: https://github.com/joansolano/record-raspberry
 ---

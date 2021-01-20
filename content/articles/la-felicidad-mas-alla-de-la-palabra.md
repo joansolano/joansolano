@@ -1,13 +1,13 @@
 ---
 title: La felicidad más allá de la palabra
 description: Dan Gilbert Happiness What Your Mother Didn’t Tell You (2018 WORLD.MINDS Annual Symposium) | YouTube
-img: felicidadmasalla.jpg
+img: felicidadmasalla.webp
 alt: felicidadmasalla
 imgauthor: free-photos en Pixabay
 author:
     name: JOAN SOLANO
     bio: Estudiante de ingeniería mecatrónica
-    image: joansolano.jpg
+    image: joansolano.webp
 urlvideo: https://www.youtube.com/embed/b1Y2Z1BGwno
 ---
 

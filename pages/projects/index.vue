@@ -22,7 +22,7 @@
               }">
                 <img 
                   :data-src="require(`~/assets/images/${ project.img }`)"
-                  :src="require('~/assets/lazy_img.png')"
+                  :src="require('~/assets/lazy_img.webp')"
                   :alt="project.img"
                   :class="nameClass"
                   :style="{

@@ -29,7 +29,7 @@
                             <nuxt-link :to="{ name: 'blog-slug', params: { slug: article.slug } }">
                                 <img
                                     :data-src="require(`~/assets/images/${article.img}`)"
-                                    :src="require('~/assets/lazy_img.png')"
+                                    :src="require('~/assets/lazy_img.webp')"
                                     :alt="article.img"
                                     :style="{ width: '100%', height: '100%' }"
                                     :class="nameClass"

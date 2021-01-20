@@ -1,13 +1,13 @@
 ---
 title: Eres lo que comes
 description: The Game Changers | Netflix
-img: eresloquecomes.jpg
+img: eresloquecomes.webp
 alt: eresloquecomes
 imgauthor: Steve Buissinne en Pixabay
 author:
     name: JOAN SOLANO
     bio: Estudiante de ingeniería mecatrónica
-    image: joansolano.jpg
+    image: joansolano.webp
 urlvideo: https://www.youtube.com/embed/iSpglxHTJVM
 ---
 

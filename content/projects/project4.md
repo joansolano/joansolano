@@ -1,7 +1,7 @@
 ---
 title: Proyecto 4
 description: Proyecto donde se va a verificar si la conexión sirve
-img: felicidadmasalla.jpg
+img: felicidadmasalla.webp
 alt: felicidadmasalla
 github: https://github.com/joansolano/MiPrimerRepositorio
 ---

@@ -33,7 +33,7 @@
             }">
                 <img
                     :data-src="require('~/assets/svg/Typewriter.svg')"
-                    :src="require('~/assets/lazy_img.png')"
+                    :src="require('~/assets/lazy_img.webp')"
                     alt="typewriter"
                     :style="{ 
                         width: `${ widthImg.width }px`,

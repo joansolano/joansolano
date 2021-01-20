@@ -39,15 +39,15 @@ export default {
   height: 100vh;
 }
 .section#home {
-  background: url("../static/background_joansolano.png") no-repeat center center fixed;
+  background: url("../static/background_joansolano.webp") no-repeat center center fixed;
   background-size: cover;
 }
 .section#blog {
-  background: url("../static/background_blog.jpg") no-repeat center center fixed;
+  background: url("../static/background_blog.webp") no-repeat center center fixed;
   background-size: cover;
 }
 .section#projects {
-  background: url("../static/background_projects.jpg") no-repeat center center fixed;
+  background: url("../static/background_projects.webp") no-repeat center center fixed;
   background-size: cover;
 }
 </style>
