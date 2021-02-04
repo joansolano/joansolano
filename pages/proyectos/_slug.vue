@@ -39,35 +39,26 @@
           <v-card
             max-width="500"
             tile
-            class="mb-4"
+            class="mb-4 pb-2 pt-2"
             flat
           >
-            <v-list>
-              <p class="text-h6 text-xl-h5 ma-2 text-center">Contenido</p>
-              <v-list-item-group
-                v-model="selectedItem"
-                color="black"
-              >
-                <v-list-item
-                  v-for="link of project.toc"
-                  :key="link.id"
-                  class="mr-1 ml-1"
-                >
-                  <nuxt-link :to="`#${ link.id }`">
-                    <v-list-item-content>
-                        <v-list-item-title v-text="link.text" class="green--text text-xl-h5"></v-list-item-title>
-                    </v-list-item-content>
-                  </nuxt-link>
-                </v-list-item>
-              </v-list-item-group>
-            </v-list>
+            <p class="text-h6 text-xl-h5 ma-2 text-center">Contenido</p>
+            <p 
+              v-for="link in project.toc"
+              :key="link.id"
+              class="ml-2 mb-2"
+            >
+              <nuxt-link :to="`#${ link.id }`" class="green--text">
+                {{ link.text }}
+              </nuxt-link>
+            </p>
           </v-card>
           
-          <nuxt-content :document="project" class="text-xl-h5" id="conten"/>
+          <nuxt-content :document="project" class="text-xl-h5" id="nxt-content"/>
 
           <p class="mt-3 text-body-2 text-sm-body-1 text-md-subtitle-2 text-xl-subtitle-1">Post actualizado por última vez: {{formatDate(project.updatedAt)}}</p>
           <v-divider></v-divider>
-          <prev-next :prev="prev" :next="next" :name="'projects-slug'" class="mt-4 mb-2 text-xl-h6"/>
+          <prev-next :prev="prev" :next="next" :name="'proyectos-slug'" class="mt-4 mb-2 text-xl-h6"/>
         </v-col>
       </v-row>
     </v-container>
@@ -119,6 +110,15 @@ export default {
         day: 'numeric'
       }
       return new Date(date).toLocaleDateString('es', options)
+    },
+    setImages() {
+      const arrPimg = document.querySelectorAll('.img')
+      if (arrPimg) {
+        arrPimg.forEach((el, index) => {
+          const img = require(`~/assets/images/${ this.project.arrImgs[index] }`)
+          el.innerHTML = '<img src="' + img + '">'
+        })
+      }
     }
   },
   head() {
@@ -145,7 +145,7 @@ export default {
         {
           hid: "canonical",
           name: "canonical",
-          href: `https://joansolano.herokuapp.com/projects/${this.$route.params.slug}`
+          href: `https://joansolano.herokuapp.com/proyectos/${this.$route.params.slug}`
         }
       ]
     }
@@ -156,14 +156,14 @@ export default {
         type: "article",
         title: this.project.title,
         description: this.project.description,
-        url: `https://joansolano.herokuapp.com/projects/${ this.$route.params.slug }`,
+        url: `https://joansolano.herokuapp.com/proyectos/${ this.$route.params.slug }`,
         mainImage: this.project.img
       }
       return getSiteMeta(metaData)
-    },
+    }
   },
   mounted() {
-    console.log(document.querySelector("#conten"))
+    this.setImages()
   }
 }
 </script>

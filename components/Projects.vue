@@ -10,7 +10,7 @@
             <p class="text-subtitle-2 text-md-subtitle-1 text-xl-h5">Los proyectos permiten hacer esto y es mediante estos, que se puede cambiar el mundo y a las personas que viven en el</p>
             <p class="text-subtitle-2 text-md-subtitle-1 text-xl-h5">Por eso quiero mostrar los distintos proyectos que hecho</p>
             <v-btn
-                :to="{ name: 'projects' }"
+                :to="{ name: 'proyectos' }"
                 outlined
                 class="mb-4 text-xl-h5"
                 :x-large="this.$vuetify.breakpoint.name === 'xl'"

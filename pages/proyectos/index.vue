@@ -15,7 +15,7 @@
           sm="10"
         >
           <v-card>
-            <nuxt-link :to="{ name: 'projects-slug', params: { slug: project.slug } }">
+            <nuxt-link :to="{ name: 'proyectos-slug', params: { slug: project.slug } }">
               <div :style="{
                 position: 'relative',
                 height: screen2k ? '500px' : '300px'
@@ -102,7 +102,7 @@ export default {
         {
           hid: "canonical",
           name: "canonical",
-          href: "https://joansolano.herokuapp.com/projects"
+          href: "https://joansolano.herokuapp.com/proyectos"
         }
       ]
     }
@@ -111,8 +111,8 @@ export default {
     meta() {
       const metaData = {
         title: "Proyectos",
-        description: "Projects page about all the projects made by Joan Solano",
-        url: "https://joansolano.herokuapp.com/projects",
+        description: "Página principal acerca de todos los proyectos y trabajos que han sido realizados por Joan Solano",
+        url: "https://joansolano.herokuapp.com/proyectos",
       }
       return getSiteMeta(metaData)
     },

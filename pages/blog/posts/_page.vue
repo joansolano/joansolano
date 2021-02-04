@@ -99,7 +99,7 @@ export default {
         meta() {
             const metaData = {
                 title: `Página ${ this.$route.params.page } | Blog`,
-                description: "Blog page about all the blog posts, articles, critics and others made by Joan Solano",
+                description: "Página de blog con todas las publicaciones, artículos, críticas y demás que han sido hechos y publicados por Joan Solano",
                 url: `https://joansolano.herokuapp.com/blog/posts/${ this.$route.params.page }`,
             }
             return getSiteMeta(metaData)

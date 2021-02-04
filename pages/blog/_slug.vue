@@ -96,6 +96,15 @@ export default {
                 day: 'numeric'
             }
             return new Date(date).toLocaleDateString('es', options)
+        },
+        setImages() {
+            const arrPimg = document.querySelectorAll('.img')
+            if (arrPimg) {
+                arrPimg.forEach((el, index) => {
+                    const img = require(`~/assets/images/${ this.article.arrImgs[index] }`)
+                    el.innerHTML = '<img src="' + img + '">'
+                })
+            }
         }
     },
     head() {
@@ -162,6 +171,9 @@ export default {
                 }
             }
         }
+    },
+    mounted() {
+        this.setImages()
     }
 }
 </script>

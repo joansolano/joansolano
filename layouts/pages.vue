@@ -90,7 +90,7 @@ export default {
                 },
                 {
                     name: 'Conóceme',
-                    url: 'aboutme',
+                    url: 'conoceme',
                     icon: 'user-circle'
                 },
                 {
@@ -100,12 +100,12 @@ export default {
                 },
                 {
                     name: 'Proyectos',
-                    url: 'projects',
+                    url: 'proyectos',
                     icon: 'tools'
                 },
                 {
                     name: 'Contáctame',
-                    url: 'contactme',
+                    url: 'contactame',
                     icon: 'phone'
                 },
             ]

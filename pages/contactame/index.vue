@@ -147,7 +147,7 @@ export default {
         {
           hid: "canonical",
           name: "canonical",
-          href: "https://joansolano.herokuapp.com/contactme"
+          href: "https://joansolano.herokuapp.com/contactame"
         }
       ]
     }
@@ -156,8 +156,8 @@ export default {
     meta() {
       const metaData = {
         title: "Contáctame",
-        description: "Index page to contact Joan Solano",
-        url: "https://joansolano.herokuapp.com/contactme",
+        description: "Página principal para contactar con Joan Solano",
+        url: "https://joansolano.herokuapp.com/contactame",
       }
       return getSiteMeta(metaData)
     },

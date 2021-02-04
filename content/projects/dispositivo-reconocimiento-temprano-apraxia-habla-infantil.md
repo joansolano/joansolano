@@ -4,6 +4,10 @@ description: Desarrollo de dispositivo para la grabación de audio de bebes para
 img: felicidadmasalla.webp
 alt: felicidadmasalla
 github: https://github.com/joansolano/record-raspberry
+arrImgs: [
+    sph0645.webp,
+    sph0645.webp
+]
 ---
 
 La apraxia del habla se trata de un transtorno poco común en el cual el niño tiene dificultad para articular palabras, debido a que al cerebro se le dificulta planificar el movimiento del habla.
@@ -24,6 +28,14 @@ Después de eso empezamos a reconocer todo lo del proyecto, más especificamente
 
 ## **Selección de componentes electrónicos**
 
+Para la selección, había que empezar por la parte más importante del dispositivo de recolección de audio, el micrófono. En el mercado hay muchos tipos de <a href="https://es.wikipedia.org/wiki/Micrófono" target="_blank" rel="noopener noreferrer">micrófonos</a> como los de condensador o dinámicos pero son muy grandes para este tipo de aplicación. La respuesta estaba en los micrófonos tipo <a href="https://es.wikipedia.org/wiki/Micrófono#Micrófono_microelectromecánico_(MEMS)" target="_blank" rel="nopener noreferrer">MEMS</a> que son incluso más pequeños que una falange de un dedo y que perfectamente puede caber en cualquier juguete.
 
+Para nuestro caso, elegimos el <a href="https://www.adafruit.com/product/3421" target="_blank" rel="noopener noreferrer">Adafruit SPH0645LM4H</a>:
+
+<span class="img"></span>
+
+En un principio resultaba muy tentador hacerlo todo desde cero por el hecho de que uno cree que tiene tiempo para todo, hecho que resulta ser falso la mayoría de las veces. 
+
+<span class="img"></span>
 
 

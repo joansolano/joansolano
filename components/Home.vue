@@ -34,7 +34,7 @@
                 </p>
             </vue-typed-js>
             <v-btn
-                :to="{ name: 'aboutme' }"
+                :to="{ name: 'conoceme' }"
                 large
                 :x-large="this.$vuetify.breakpoint.name === 'xs' ? false : true"
                 color="green text-xl-h5"
@@ -42,7 +42,7 @@
                 Conóceme
             </v-btn>
             <v-btn
-                :to="{ name: 'contactme' }"
+                :to="{ name: 'contactame' }"
                 large
                 :x-large="this.$vuetify.breakpoint.name === 'xs' ? false : true"
                 color="green text-xl-h5"

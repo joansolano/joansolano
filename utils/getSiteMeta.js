@@ -1,7 +1,7 @@
 const type = "website";
 const url = "https://joansolano.herokuapp.com";
 const title = "Joan Solano";
-const description = "Personal website about Joan Solano";
+const description = "Sitio web personal acerca de Joan Solano, estudiante de ingeniería mecatrónica en la Universidad EIA y escritor de críticas";
 const mainImage = "/logo_joansolano.png";
 
 export default (meta) => {
