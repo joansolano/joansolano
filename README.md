@@ -1,8 +1,10 @@
 ### Hola 👋
 
-Soy estudiante de ingeniería mecatrónica en la Universidad EIA. Tengo conocimientos sobre electrónica análoga y digital, desarrollo de circuitos en Proteus Design Suite, diseño de sistemas de control análogo y diseño y simulación de piezas y ensambles mecánicos en Adobe Fusion 360. Además, tengo un manejo intermedio o superior en lenguajes de programación como Python y Javascript y en tecnologías web como HTML, CSS, Vue.js, Nuxt.js y GIT.
+Soy ingeniero mecatrónico en formación en la Universidad EIA. Tengo conocimientos básicos en campos como el control análogo y digital, robótica, diseño CAD en Fusion 360 y diseño de circuitos electrónicos con ayuda de Proteus Design Suite.
 
-Mucho de lo que he aprendido de desarrollo web, lo he hecho mediante tutoriales en YouTube principalmente por lo que todo este conocimiento no tiene un diploma de respaldo. Sin embargo, repositorios como Github han permitido que todo el código que escribo sea más accesible a otras personas que buscan verificar mi conocimiento y habilidades. 
+Actualmente, estoy realizando las prácticas universitarias en Crystal S.A.S como desarrollador Fullstack, usando NestJS (NodeJS) para el Backend y ReactJS para el Frontend. También, tengo habilidades tanto en Angular como en VueJS.
+
+Además, cuento con habilidades básicas en Data Science, Computer Vision y Artificial Intelligence haciendo uso de Python como lenguaje de programación.
 
 <!--
 **joansolano/joansolano** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
